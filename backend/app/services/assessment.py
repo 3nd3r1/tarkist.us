@@ -6,11 +6,14 @@ from sqlalchemy.orm import Session
 from app.agents.base import AgentError
 from app.agents.entity_resolution import EntityResolutionAgent
 from app.agents.entity_resolution.agent import EntityResolutionAgentRequest
+from app.agents.vendor_information import VendorInformationAgent
+from app.agents.vendor_information.agent import VendorInformationAgentRequest
 from app.database import get_db
 from app.llm.factory import LLMProviderFactory, LLMProviderType
 from app.models.assessment import Assessment as AssessmentModel
 from app.schemas.assessment import Assessment, AssessmentInputData, AssessmentStatus, AssessmentType
 from app.schemas.entity import Entity
+from app.schemas.vendor import Vendor
 
 
 class AssessmentServiceError(Exception):
@@ -29,6 +32,7 @@ class AssessmentService:
     def __init__(self, db: Session | None = None):
         llm_provider = LLMProviderFactory.create_provider(LLMProviderType.GEMINI)
         self.entitiy_resolution_agent = EntityResolutionAgent(llm_provider)
+        self.vendor_information_agent = VendorInformationAgent(llm_provider)
         self.__db = db
 
     def _get_db(self) -> Session:
@@ -104,6 +108,20 @@ class AssessmentService:
         db.commit()
         return True
 
+    async def update_assessment_vendor(self, assessment_id: UUID, vendor: Vendor) -> bool:
+        """Update assessment vendor information data in database."""
+        db = self._get_db()
+
+        db_assessment = (
+            db.query(AssessmentModel).filter(AssessmentModel.id == str(assessment_id)).first()
+        )
+        if not db_assessment:
+            return False
+
+        db_assessment.vendor_data = vendor.model_dump()
+        db.commit()
+        return True
+
     async def process_assessment(self, assessment_id: UUID) -> None:
         """Process the assessment in the background."""
         try:
@@ -119,8 +137,12 @@ class AssessmentService:
             try:
                 entity = await self._call_entity_resolution_agent(assessment.input_data)
                 await self.update_assessment_entity(assessment_id, entity)
+
+                vendor_info = await self._call_vendor_information_agent(entity)
+                await self.update_assessment_vendor(assessment_id, vendor_info)
+
             except AssessmentServiceAgentError as e:
-                logging.error(f"Entity resolution failed for {assessment_id}: {e}")
+                logging.error(f"Agent processing failed for {assessment_id}: {e}")
                 await self.update_assessment_status(assessment_id, AssessmentStatus.FAILED)
                 return
 
@@ -140,3 +162,13 @@ class AssessmentService:
             return response.resolved_entity
         except AgentError as e:
             raise AssessmentServiceAgentError(f"Entity resolution failed: {e}") from e
+
+    async def _call_vendor_information_agent(self, entity: Entity) -> Vendor:
+        try:
+            request = VendorInformationAgentRequest(
+                entity=entity,
+            )
+            response = await self.vendor_information_agent.execute(request)
+            return response.vendor
+        except AgentError as e:
+            raise AssessmentServiceAgentError(f"Vendor information gathering failed: {e}") from e
