@@ -39,7 +39,7 @@ export default function AssessmentPage() {
   const params = useParams();
   const [assessment, setAssessment] = useState<Assessment | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [reportSize, setReportSize] = useState<ReportSize>('medium');
+  const [reportSize, setReportSize] = useState<ReportSize>('enterprise');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
   useEffect(() => {

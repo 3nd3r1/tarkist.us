@@ -1,0 +1,224 @@
+{
+  "id": "",
+  "timestamp": "",
+  "cached": false,
+  "product": {
+    "name": "",
+    "vendor": "",
+    "category": "",
+    "description": "",
+    "usage": "",
+    "website": "",
+    "logo": ""
+  },
+  "trustScore": {
+    "score": 0,
+    "rationale": "",
+    "confidence": 0
+  },
+  "vendorInfo": {
+    "companyName": "",
+    "headquarters": "",
+    "jurisdiction": "",
+    "founded": 0,
+    "reputation": {
+      "score": 0,
+      "summary": "",
+      "sources": [
+        {
+          "id": "",
+          "type": "",
+          "title": "",
+          "verified": false,
+          "date": ""
+        }
+      ]
+    },
+    "securityTrackRecord": "",
+    "psirtPage": ""
+  },
+  "platformSupport": {
+    "platforms": [
+      {
+        "name": "",
+        "supported": false,
+        "versions": "",
+        "securityModel": ""
+      }
+    ],
+    "versionDifferences": ""
+  },
+  "dataHandling": {
+    "storage": {
+      "location": "",
+      "regions": [""],
+      "cloudProvider": "",
+      "encryptionAtRest": false
+    },
+    "transmission": {
+      "endpoints": [""],
+      "subProcessors": [""],
+      "encryptionInTransit": {
+        "tls": "",
+        "certVerified": false
+      }
+    },
+    "usage": {
+      "analytics": false,
+      "advertising": false,
+      "aiTraining": false,
+      "retentionPolicy": "",
+      "userCanDelete": false
+    }
+  },
+  "permissions": {
+    "required": [
+      {
+        "name": "",
+        "riskLevel": "",
+        "justification": ""
+      }
+    ],
+    "optional": [
+      {
+        "name": "",
+        "riskLevel": "",
+        "justification": ""
+      }
+    ],
+    "overPermissioningRisk": ""
+  },
+  "adminControls": {
+    "sso": false,
+    "mfa": false,
+    "rbac": false,
+    "scim": false,
+    "auditLogs": false,
+    "dataExport": false
+  },
+  "vulnerabilities": {
+    "cveCount": 0,
+    "trendData": [
+      {
+        "month": "",
+        "count": 0
+      }
+    ],
+    "severityBreakdown": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "recentCVEs": [
+      {
+        "id": "",
+        "cvss": 0,
+        "severity": "",
+        "description": "",
+        "publishedDate": "",
+        "patched": false
+      }
+    ],
+    "cisaKEV": false
+  },
+  "releaseLifecycle": {
+    "latestVersion": "",
+    "releaseFrequency": "",
+    "patchCadence": "",
+    "eolDates": [
+      {
+        "version": "",
+        "date": ""
+      }
+    ],
+    "ltsVersions": [""],
+    "versionHistory": [
+      {
+        "version": "",
+        "releaseDate": "",
+        "securityFixes": 0
+      }
+    ]
+  },
+  "aiFeatures": {
+    "hasAI": false,
+    "features": [
+      {
+        "name": "",
+        "description": "",
+        "dataAccess": [""]
+      }
+    ],
+    "dataUsedForTraining": false,
+    "canOptOut": false,
+    "processingLocation": ""
+  },
+  "incidents": {
+    "count": 0,
+    "timeline": [
+      {
+        "date": "",
+        "title": "",
+        "severity": "",
+        "description": "",
+        "impact": "",
+        "resolution": "",
+        "sources": [
+          {
+            "id": "",
+            "type": "",
+            "title": "",
+            "verified": false,
+            "date": ""
+          }
+        ]
+      }
+    ]
+  },
+  "compliance": {
+    "certifications": [""],
+    "dataHandlingSummary": "",
+    "dpa": false,
+    "sources": [
+      {
+        "id": "",
+        "type": "",
+        "title": "",
+        "verified": false,
+        "date": ""
+      }
+    ]
+  },
+  "sources": {
+    "public": {
+      "count": 0,
+      "types": [
+        {
+          "type": "",
+          "count": 0
+        }
+      ]
+    },
+    "confidential": {
+      "count": 0,
+      "types": [
+        {
+          "type": "",
+          "count": 0
+        }
+      ]
+    }
+  },
+  "alternatives": [
+    {
+      "name": "",
+      "vendor": "",
+      "trustScore": 0,
+      "summary": "",
+      "whyBetter": ""
+    }
+  ],
+  "allCitations": []
+}
+
