@@ -155,7 +155,7 @@ class AssessmentService:
         if not db_assessment:
             return False
 
-        db_assessment.cve_analysis_data = cve_analysis.model_dump()
+        db_assessment.cve_analysis_data = cve_analysis.model_dump(mode="json")
         db.commit()
         return True
 
