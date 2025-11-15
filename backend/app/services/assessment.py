@@ -16,9 +16,12 @@ from app.database import get_db
 from app.llm.factory import LLMProviderFactory, LLMProviderType
 from app.models.assessment import Assessment as AssessmentModel
 from app.schemas.assessment import Assessment, AssessmentInputData, AssessmentStatus, AssessmentType
+from app.schemas.cve import CVEAnalysis
 from app.schemas.entity import Entity
 from app.schemas.vendor import Vendor
 from app.services.cve import CVEService
+
+logger = logging.getLogger(__name__)
 
 
 class AssessmentServiceError(Exception):
@@ -52,10 +55,6 @@ class AssessmentService:
         self, input_data: AssessmentInputData, assessment_type: AssessmentType
     ) -> Assessment:
         # Check if assessment with same name already exists
-        existing_assessment = await self.get_assessment_by_name(input_data.name)
-        if existing_assessment:
-            return existing_assessment
-
         db = self._get_db()
 
         db_assessment = AssessmentModel(
@@ -146,7 +145,7 @@ class AssessmentService:
         db.commit()
         return True
 
-    async def update_assessment_cve_analysis(self, assessment_id: UUID, cve_analysis: dict) -> bool:
+    async def update_assessment_cve_analysis(self, assessment_id: UUID, cve_analysis: CVEAnalysis) -> bool:
         """Update assessment CVE analysis data in database."""
         db = self._get_db()
 
@@ -156,7 +155,7 @@ class AssessmentService:
         if not db_assessment:
             return False
 
-        db_assessment.cve_analysis_data = cve_analysis
+        db_assessment.cve_analysis_data = cve_analysis.model_dump()
         db.commit()
         return True
 
@@ -181,7 +180,7 @@ class AssessmentService:
 
                 # Get CPEs for the entity
                 cpes = await self._call_cpe_resolver_agent(entity)
-                logging.info(f"Found {len(cpes)} CPEs for assessment {assessment_id}")
+                logging.debug(f"Found {len(cpes)} CPEs for assessment {assessment_id}")
 
                 # Get CVEs for all CPEs
                 all_cves = []
@@ -210,7 +209,8 @@ class AssessmentService:
 
                 # Analyze CVEs with the CVE analysis agent
                 if all_cves:
-                    cve_analysis = await self._call_cve_analysis_agent(entity, all_cves)
+                    cve_analysis_data = await self._call_cve_analysis_agent(entity, all_cves)
+                    cve_analysis = CVEAnalysis(**cve_analysis_data, cves=all_cves)
                     await self.update_assessment_cve_analysis(assessment_id, cve_analysis)
                     logging.debug(f"CVE analysis completed for assessment {assessment_id}")
                 else:

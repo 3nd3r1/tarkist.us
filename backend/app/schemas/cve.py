@@ -28,3 +28,14 @@ class CVE(BaseModel):
     published: datetime = Field(..., description="Publication date")
     severity: CVESeverity = Field(..., description="CVSS severity")
     score: float | None = Field(None, description="CVSS base score")
+
+
+class CVEAnalysis(BaseModel):
+    risk_assessment: str = Field(..., description="Overall risk assessment summary")
+    critical_vulnerabilities: list[str] = Field(
+        ..., description="List of critical vulnerability IDs"
+    )
+    recommendations: list[str] = Field(..., description="Security recommendations")
+    severity_breakdown: dict[str, int] = Field(..., description="Count of CVEs by severity level")
+    total_cves: int = Field(..., description="Total number of CVEs analyzed")
+    cves: list[CVE] = Field(..., description="List of CVEs analyzed")
