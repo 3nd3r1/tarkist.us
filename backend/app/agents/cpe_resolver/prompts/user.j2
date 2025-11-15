@@ -1,0 +1,20 @@
+Please analyze the following entity data and generate CPE identifiers for vulnerability searching:
+
+Entity Data:
+{{ entity_data }}
+
+Generate multiple CPE variations that could be used to find CVEs for this product/vendor combination. Consider:
+
+1. Primary CPE using exact vendor and product names
+2. Alternative vendor name variations (abbreviations, common aliases)
+3. Alternative product name variations (short names, common references)
+4. Any other reasonable variations that might appear in vulnerability databases
+
+For each CPE, provide:
+- vendor: The vendor name portion of the CPE
+- product: The product name portion of the CPE  
+- full_cpe: The complete CPE string in standard format
+
+Return a JSON object following the provided schema with an array of CPE identifiers.
+
+Ensure the response is valid JSON that matches the schema exactly.
