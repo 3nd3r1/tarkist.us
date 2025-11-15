@@ -23,3 +23,7 @@ export { DisclaimerBanner } from './disclaimer-banner';
 // Bonus Components (Creative Enhancements)
 export { SecurityScoreBreakdown } from './security-score-breakdown';
 export { AdminControlsGrid } from './admin-controls-grid';
+
+// Auth-gated Components
+export { SaveAssessmentButton } from './save-assessment-button';
+export { AssessmentNotes } from './assessment-notes';

@@ -32,6 +32,8 @@ import { DisclaimerBanner } from "@/components/assessment/disclaimer-banner";
 import { AlternativesList } from "@/components/assessment/alternative-card";
 import { AdminControlsGrid } from "@/components/assessment/admin-controls-grid";
 import { SecurityScoreBreakdown } from "@/components/assessment/security-score-breakdown";
+import { SaveAssessmentButton } from "@/components/assessment/save-assessment-button";
+import { AssessmentNotes } from "@/components/assessment/assessment-notes";
 
 export default function AssessmentPage() {
   const params = useParams();
@@ -161,7 +163,8 @@ export default function AssessmentPage() {
                   onSizeChange={setReportSize} 
                 />
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center gap-3">
+                <SaveAssessmentButton assessment={assessment} />
                 <Button 
                   onClick={handleDownloadPDF}
                   disabled={isGeneratingPDF}
@@ -200,6 +203,15 @@ export default function AssessmentPage() {
                 </div>
               </CardContent>
             </Card>
+          </motion.div>
+
+          {/* Personal Notes Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+          >
+            <AssessmentNotes assessmentId={assessment.id} />
           </motion.div>
 
           {/* Trust Score Rationale */}

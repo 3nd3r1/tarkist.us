@@ -6,6 +6,7 @@ import { HeroSearch } from "@/components/search/hero-search";
 import { StatsOverview } from "@/components/shared/stats-overview";
 import { RecentAssessments } from "@/components/shared/recent-assessments";
 import { Card, CardContent } from "@/components/ui/card";
+import { WelcomeBanner } from "@/components/shared/welcome-banner";
 
 const features = [
   {
@@ -125,6 +126,13 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Welcome Banner for Non-Authenticated Users */}
+      <section className="pb-8 bg-background">
+        <div className="container mx-auto px-4">
+          <WelcomeBanner />
         </div>
       </section>
 
