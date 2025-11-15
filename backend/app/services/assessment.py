@@ -60,7 +60,7 @@ class AssessmentService:
         db = self._get_db()
 
         db_assessment = (
-            db.query(AssessmentModel).filter(AssessmentModel.id == assessment_id).first()
+            db.query(AssessmentModel).filter(AssessmentModel.id == str(assessment_id)).first()
         )
 
         if not db_assessment:
@@ -73,7 +73,7 @@ class AssessmentService:
         db = self._get_db()
 
         db_assessment = (
-            db.query(AssessmentModel).filter(AssessmentModel.id == assessment_id).first()
+            db.query(AssessmentModel).filter(AssessmentModel.id == str(assessment_id)).first()
         )
         if not db_assessment:
             return False
@@ -87,7 +87,7 @@ class AssessmentService:
         db = self._get_db()
 
         db_assessment = (
-            db.query(AssessmentModel).filter(AssessmentModel.id == assessment_id).first()
+            db.query(AssessmentModel).filter(AssessmentModel.id == str(assessment_id)).first()
         )
         if not db_assessment:
             return False
