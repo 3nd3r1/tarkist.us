@@ -1,7 +1,9 @@
+from typing import Any
 import uuid
 
 from sqlalchemy import JSON, Column, DateTime, String, Text
 from sqlalchemy import Enum as SQLEnum
+from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
 
 from app.database import Base
@@ -19,13 +21,13 @@ class Assessment(Base):
     input_url = Column(Text, nullable=True)
 
     # Assessment metadata
-    assessment_type: Column[AssessmentType] = Column(SQLEnum(AssessmentType), nullable=False)
-    assessment_status: Column[AssessmentStatus] = Column(
+    assessment_type: Mapped[AssessmentType] = mapped_column(SQLEnum(AssessmentType), nullable=False)
+    assessment_status: Mapped[AssessmentStatus] = mapped_column(
         SQLEnum(AssessmentStatus), nullable=False, default=AssessmentStatus.QUEUED
     )
 
     # Entity data (stored as JSON when resolved)
-    entity_data = Column(JSON, nullable=True)
+    entity_data: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
 
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
