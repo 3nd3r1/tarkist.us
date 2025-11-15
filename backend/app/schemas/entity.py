@@ -1,9 +1,10 @@
+from enum import Enum
 from pydantic import BaseModel, Field
 
 from app.schemas.vendor import Vendor
 
 
-class EntityCategory(str):
+class EntityCategory(str, Enum):
     FILESHARING = "filesharing"
     CHAT = "chat"
     GEN_AI_TOOL = "gen_ai_tool"
