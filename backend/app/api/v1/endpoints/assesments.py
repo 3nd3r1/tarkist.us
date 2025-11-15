@@ -1,11 +1,30 @@
-from fastapi import APIRouter
+from uuid import uuid1
+
+from fastapi import APIRouter, Depends
+from pydantic import UUID1, BaseModel
+
+from app.dependencies import get_assessment_service
+from app.services.assessment import AssessmentService
 
 router = APIRouter()
 
 
-@router.post("")
-def create_assesment():
-    return "Assesment created"
+class AssessmentCreateRequest(BaseModel):
+    name: str
+    vendor_name: str | None
+    url: str | None
+
+
+class AssessmentCreateResponse(BaseModel):
+    assesment_id: UUID1
+
+
+@router.post("", response_model=AssessmentCreateResponse)
+async def create_assesment(
+    request: AssessmentCreateRequest,
+    assessment_service: AssessmentService = Depends(get_assessment_service),
+):
+    return AssessmentCreateResponse(assesment_id=uuid1())
 
 
 @router.get("")

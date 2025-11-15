@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import UUID1, BaseModel, Field
 
 from app.schemas.entity import Entity
 
@@ -12,5 +12,5 @@ class AssesmentInputData(BaseModel):
 
 
 class Assesment(BaseModel):
-    id: str = Field(..., description="The unique identifier for the assessment")
+    id: UUID1 = Field(..., description="The unique identifier for the assessment")
     entity: Entity = Field(..., description="The entity being assessed")
