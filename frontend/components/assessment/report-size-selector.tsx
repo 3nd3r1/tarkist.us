@@ -3,7 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ReportSize } from '@/lib/types';
-import { FileText, Clock, Zap, Eye, Maximize, BookOpen } from 'lucide-react';
+import { FileText, Zap, Eye, Maximize, BookOpen } from 'lucide-react';
 
 interface ReportSizeSelectorProps {
   selectedSize: ReportSize;
@@ -60,10 +60,6 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
         <div className="flex items-center gap-2 mb-4">
           <FileText className="h-5 w-5 text-primary" />
           <h3 className="font-semibold text-lg">Report Detail Level</h3>
-          <Badge variant="secondary" className="ml-auto">
-            <Clock className="h-3 w-3 mr-1" />
-            {sizeConfig[selectedSize]?.time || 'N/A'} read
-          </Badge>
         </div>
         
         <p className="text-sm text-muted-foreground mb-4">
@@ -113,12 +109,6 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
                     <h4 className={`font-semibold text-base mb-1 ${isSelected ? config.textColor : ''}`}>
                       {config.label}
                     </h4>
-                    <div className="flex items-center gap-2">
-                      <Badge variant={isSelected ? "default" : "outline"} className="text-xs">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {config.time}
-                      </Badge>
-                    </div>
                   </div>
                   
                   <p className={`text-xs ${isSelected ? config.textColor : 'text-muted-foreground'}`}>

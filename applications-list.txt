@@ -1,0 +1,118 @@
+100 Most Used and Interesting Applications for Security Assessment
+
+PRODUCTIVITY & COLLABORATION
+1. Slack
+2. Microsoft Teams
+3. Zoom
+4. Google Workspace (G Suite)
+5. Microsoft 365
+6. Notion
+7. Confluence
+8. Trello
+9. Asana
+10. Monday.com
+11. Jira
+12. Basecamp
+13. ClickUp
+14. Airtable
+15. Miro
+16. Figma
+17. Adobe Creative Cloud
+18. Canva
+19. Dropbox
+20. Google Drive
+
+DEVELOPMENT & CODE
+21. GitHub
+22. GitLab
+23. Bitbucket
+24. VS Code
+25. JetBrains IDEs (IntelliJ, PyCharm, etc.)
+26. Docker
+27. Kubernetes
+28. Jenkins
+29. CircleCI
+30. GitHub Actions
+31. Terraform
+32. Ansible
+33. npm
+34. PyPI
+35. Maven Central
+36. npm registry
+37. Docker Hub
+38. npm packages (various)
+39. Homebrew
+40. Chocolatey
+
+CLOUD & INFRASTRUCTURE
+41. AWS (Amazon Web Services)
+42. Microsoft Azure
+43. Google Cloud Platform
+44. Heroku
+45. Vercel
+46. Netlify
+47. Cloudflare
+48. DigitalOcean
+49. Linode
+50. Vultr
+
+SECURITY & AUTHENTICATION
+51. 1Password
+52. LastPass
+53. Bitwarden
+54. Okta
+55. Auth0
+56. Duo Security
+57. CrowdStrike
+58. SentinelOne
+59. Splunk
+60. Wireshark
+
+DATABASES & DATA
+61. MongoDB
+62. PostgreSQL
+63. MySQL
+64. Redis
+65. Elasticsearch
+66. Apache Kafka
+67. Apache Spark
+68. Snowflake
+69. Databricks
+70. Tableau
+
+COMMUNICATION & SOCIAL
+71. Discord
+72. Telegram
+73. WhatsApp
+74. Signal
+75. Twitter/X
+76. LinkedIn
+77. Facebook
+78. Instagram
+79. TikTok
+80. Reddit
+
+ENTERPRISE & BUSINESS
+81. Salesforce
+82. SAP
+83. Oracle Database
+84. ServiceNow
+85. Workday
+86. Zendesk
+87. HubSpot
+88. Stripe
+89. PayPal
+90. Square
+
+OPEN SOURCE & UTILITIES
+91. WordPress
+92. Apache HTTP Server
+93. Nginx
+94. Node.js
+95. Python
+96. OpenSSL
+97. OpenSSH
+98. curl
+99. Git
+100. Linux distributions (Ubuntu, RHEL, etc.)
+

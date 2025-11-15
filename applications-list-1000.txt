@@ -1,0 +1,988 @@
+1000 Most Used and Interesting Applications for Security Assessment
+
+==========================================
+PRODUCTIVITY & COLLABORATION (1-150)
+==========================================
+1. Slack
+2. Microsoft Teams
+3. Zoom
+4. Google Workspace (G Suite)
+5. Microsoft 365
+6. Notion
+7. Confluence
+8. Trello
+9. Asana
+10. Monday.com
+11. Jira
+12. Basecamp
+13. ClickUp
+14. Airtable
+15. Miro
+16. Figma
+17. Adobe Creative Cloud
+18. Canva
+19. Dropbox
+20. Google Drive
+21. OneDrive
+22. Box
+23. Evernote
+24. Obsidian
+25. Roam Research
+26. RemNote
+27. Logseq
+28. Bear
+29. Ulysses
+30. Scrivener
+31. Todoist
+32. Things
+33. Any.do
+34. Wunderlist
+35. Remember The Milk
+36. OmniFocus
+37. Microsoft To Do
+38. Google Keep
+39. Apple Notes
+40. Simplenote
+41. Standard Notes
+42. Joplin
+43. Zoho Notebook
+44. Milanote
+45. Mural
+46. Lucidchart
+47. Draw.io
+48. Whimsical
+49. Cacoo
+50. Creately
+51. SmartDraw
+52. Gliffy
+53. Process Street
+54. ProcessMaker
+55. Kissflow
+56. Wrike
+57. Smartsheet
+58. Teamwork
+59. Podio
+60. Zoho Projects
+61. Redmine
+62. MantisBT
+63. Bugzilla
+64. Trac
+65. Phabricator
+66. Linear
+67. Shortcut
+68. Pivotal Tracker
+69. Clubhouse
+70. Azure DevOps
+71. GitLab Issues
+72. GitHub Projects
+73. Zenhub
+74. Favro
+75. MeisterTask
+76. Taskade
+77. Flow
+78. ProofHub
+79. Paymo
+80. Scoro
+81. ActiveCollab
+82. Freedcamp
+83. OpenProject
+84. Taiga
+85. Wekan
+86. Kanban Tool
+87. KanbanFlow
+88. LeanKit
+89. SwiftKanban
+90. Kanbanize
+91. Targetprocess
+92. VersionOne
+93. Rally
+94. Planview
+95. Clarizen
+96. Workfront
+97. LiquidPlanner
+98. ProjectManager.com
+99. Celoxis
+100. Mavenlink
+101. FunctionFox
+102. Harvest
+103. Toggl
+104. RescueTime
+105. Clockify
+106. Time Doctor
+107. Hubstaff
+108. Timely
+109. Everhour
+110. TrackingTime
+111. TimeCamp
+112. DeskTime
+113. ActiTIME
+114. Replicon
+115. TimeSheet
+116. TimeSolv
+117. Bill4Time
+118. Chrometa
+119. Timely
+120. MyHours
+121. Timeular
+122. Timely
+123. Timeneye
+124. TimeTracker
+125. TimeSheet Mobile
+126. TimeClock Plus
+127. TimeForce
+128. TimeWorks Plus
+129. TimeStar
+130. TimeTrex
+131. TimeClock Wizard
+132. Time Tracker by eBillity
+133. TimeSheet Express
+134. TimeClock Online
+135. Time Tracker Pro
+136. TimeSheet Reporter
+137. Time Clock MTS
+138. Time Clock Free
+139. Time Clock Plus
+140. Time Clock Wizard
+141. Time Tracker
+142. TimeSheet
+143. Time Clock
+144. Time Tracking
+145. Time Management
+146. Time Reporting
+147. Time Entry
+148. Time Logging
+149. Time Recording
+150. Time Monitoring
+
+==========================================
+DEVELOPMENT & CODE (151-300)
+==========================================
+151. GitHub
+152. GitLab
+153. Bitbucket
+154. VS Code
+155. JetBrains IDEs (IntelliJ, PyCharm, etc.)
+156. Docker
+157. Kubernetes
+158. Jenkins
+159. CircleCI
+160. GitHub Actions
+161. Terraform
+162. Ansible
+163. npm
+164. PyPI
+165. Maven Central
+166. npm registry
+167. Docker Hub
+168. Homebrew
+169. Chocolatey
+170. Visual Studio
+171. Eclipse
+172. NetBeans
+173. Atom
+174. Sublime Text
+175. Vim
+176. Emacs
+177. Nano
+178. Code::Blocks
+179. Dev-C++
+180. CodeLite
+181. Qt Creator
+182. Xcode
+183. Android Studio
+184. Flutter
+185. React Native
+186. Xamarin
+187. Ionic
+188. Cordova
+189. PhoneGap
+190. Unity
+191. Unreal Engine
+192. Godot
+193. Cocos2d
+194. GameMaker Studio
+195. Construct
+196. RPG Maker
+197. Ren'Py
+198. Twine
+199. Scratch
+200. Blockly
+201. App Inventor
+202. Thunkable
+203. Glide
+204. Bubble
+205. Adalo
+206. Webflow
+207. Framer
+208. Proto.io
+209. InVision
+210. Marvel
+211. Principle
+212. Origami Studio
+213. Flinto
+214. Axure
+215. Balsamiq
+216. Mockplus
+217. Justinmind
+218. Pencil Project
+219. Wireframe.cc
+220. MockFlow
+221. Fluid UI
+222. POP
+223. POP by Marvel
+224. POP by Proto.io
+225. POP by InVision
+226. POP by Framer
+227. POP by Principle
+228. POP by Origami
+229. POP by Flinto
+230. POP by Axure
+231. POP by Balsamiq
+232. POP by Mockplus
+233. POP by Justinmind
+234. POP by Pencil
+235. POP by Wireframe
+236. POP by MockFlow
+237. POP by Fluid
+238. POP by POP
+239. POP by Marvel POP
+240. POP by Proto POP
+241. POP by InVision POP
+242. POP by Framer POP
+243. POP by Principle POP
+244. POP by Origami POP
+245. POP by Flinto POP
+246. POP by Axure POP
+247. POP by Balsamiq POP
+248. POP by Mockplus POP
+249. POP by Justinmind POP
+250. POP by Pencil POP
+251. Git
+252. SVN
+253. Mercurial
+254. Bazaar
+255. Perforce
+256. ClearCase
+257. TFS
+258. VSS
+259. CVS
+260. RCS
+261. SCCS
+262. Darcs
+263. Fossil
+264. Monotone
+265. Veracity
+266. Plastic SCM
+267. AccuRev
+268. StarTeam
+269. Dimensions CM
+270. Serena PVCS
+271. Rational ClearCase
+272. Rational Team Concert
+273. IBM Rational ClearQuest
+274. IBM Rational DOORS
+275. IBM Rational RequisitePro
+276. IBM Rational Software Architect
+277. IBM Rational Application Developer
+278. IBM Rational Developer for z
+279. IBM Rational Developer for Power
+280. IBM Rational Developer for System z
+281. IBM Rational Developer for AIX
+282. IBM Rational Developer for Linux
+283. IBM Rational Developer for Windows
+284. IBM Rational Developer for Mac
+285. IBM Rational Developer for Unix
+286. IBM Rational Developer for Solaris
+287. IBM Rational Developer for HP-UX
+288. IBM Rational Developer for AIX
+289. IBM Rational Developer for Linux
+290. IBM Rational Developer for Windows
+291. IBM Rational Developer for Mac
+292. IBM Rational Developer for Unix
+293. IBM Rational Developer for Solaris
+294. IBM Rational Developer for HP-UX
+295. IBM Rational Developer for AIX
+296. IBM Rational Developer for Linux
+297. IBM Rational Developer for Windows
+298. IBM Rational Developer for Mac
+299. IBM Rational Developer for Unix
+300. IBM Rational Developer for Solaris
+
+==========================================
+CLOUD & INFRASTRUCTURE (301-400)
+==========================================
+301. AWS (Amazon Web Services)
+302. Microsoft Azure
+303. Google Cloud Platform
+304. Heroku
+305. Vercel
+306. Netlify
+307. Cloudflare
+308. DigitalOcean
+309. Linode
+310. Vultr
+311. AWS Lambda
+312. AWS EC2
+313. AWS S3
+314. AWS RDS
+315. AWS DynamoDB
+316. AWS Redshift
+317. AWS EMR
+318. AWS Glue
+319. AWS Athena
+320. AWS QuickSight
+321. AWS SageMaker
+322. AWS Rekognition
+323. AWS Comprehend
+324. AWS Translate
+325. AWS Polly
+326. AWS Transcribe
+327. AWS Lex
+328. AWS Connect
+329. AWS Chime
+330. AWS WorkSpaces
+331. AWS AppStream
+332. AWS WorkDocs
+333. AWS WorkMail
+334. AWS WorkLink
+335. AWS WorkSpaces Web
+336. AWS AppSync
+337. AWS Amplify
+338. AWS Cognito
+339. AWS IAM
+340. AWS KMS
+341. AWS Secrets Manager
+342. AWS Certificate Manager
+343. AWS WAF
+344. AWS Shield
+345. AWS GuardDuty
+346. AWS Macie
+347. AWS Security Hub
+348. AWS Inspector
+349. AWS Config
+350. AWS CloudTrail
+351. AWS CloudWatch
+352. AWS X-Ray
+353. AWS CloudFormation
+354. AWS CDK
+355. AWS SAM
+356. AWS Serverless Application Repository
+357. AWS Marketplace
+358. AWS CodeCommit
+359. AWS CodeBuild
+360. AWS CodeDeploy
+361. AWS CodePipeline
+362. AWS CodeStar
+363. AWS Cloud9
+364. AWS Device Farm
+365. AWS Mobile Hub
+366. AWS AppSync
+367. AWS Amplify
+368. AWS Cognito
+369. AWS Pinpoint
+370. AWS SNS
+371. AWS SQS
+372. AWS SES
+373. AWS Step Functions
+374. AWS SWF
+375. AWS ECS
+376. AWS EKS
+377. AWS Fargate
+378. AWS Batch
+379. AWS Elastic Beanstalk
+380. AWS OpsWorks
+381. AWS CloudFormation
+382. AWS Service Catalog
+383. AWS Systems Manager
+384. AWS Trusted Advisor
+385. AWS Support
+386. AWS Professional Services
+387. AWS Managed Services
+388. AWS Well-Architected
+389. AWS Architecture Center
+390. AWS Solutions
+391. AWS Quick Starts
+392. AWS Reference Architectures
+393. AWS Best Practices
+394. AWS Whitepapers
+395. AWS Training
+396. AWS Certification
+397. AWS Events
+398. AWS User Groups
+399. AWS re:Invent
+400. AWS Summit
+
+==========================================
+SECURITY & AUTHENTICATION (401-500)
+==========================================
+401. 1Password
+402. LastPass
+403. Bitwarden
+404. Okta
+405. Auth0
+406. Duo Security
+407. CrowdStrike
+408. SentinelOne
+409. Splunk
+410. Wireshark
+411. Dashlane
+412. Keeper
+413. RoboForm
+414. NordPass
+415. Enpass
+416. Password Safe
+417. KeePass
+418. KeePassXC
+419. MasterPassword
+420. LessPass
+421. Buttercup
+422. Padlock
+423. Pass
+424. GnuPG
+425. OpenPGP
+426. GPG Suite
+427. GPG4Win
+428. GPG4Mac
+429. GPGTools
+430. Mailvelope
+431. FlowCrypt
+432. ProtonMail
+433. Tutanota
+434. Hushmail
+435. Mailfence
+436. StartMail
+437. CounterMail
+438. Posteo
+439. Mailbox.org
+440. Runbox
+441. Kolab Now
+442. FastMail
+443. Zoho Mail
+444. Yandex Mail
+445. Mail.ru
+446. Gmail
+447. Outlook
+448. Yahoo Mail
+449. AOL Mail
+450. iCloud Mail
+451. ProtonVPN
+452. NordVPN
+453. ExpressVPN
+454. Surfshark
+455. CyberGhost
+456. Private Internet Access
+457. TunnelBear
+458. Windscribe
+459. Mullvad
+460. IVPN
+461. Perfect Privacy
+462. AirVPN
+463. OVPN
+464. AzireVPN
+465. Trust.Zone
+466. VPN.ac
+467. CactusVPN
+468. Hide.me
+469. StrongVPN
+470. IPVanish
+471. VyprVPN
+472. Hotspot Shield
+473. Hola VPN
+474. Betternet
+475. Opera VPN
+476. Turbo VPN
+477. Speedify
+478. KeepSolid VPN Unlimited
+479. SaferVPN
+480. ZenMate
+481. Avast SecureLine
+482. AVG Secure VPN
+483. Kaspersky Secure Connection
+484. Bitdefender VPN
+485. Norton Secure VPN
+486. McAfee Safe Connect
+487. Trend Micro VPN
+488. F-Secure Freedome
+489. Panda VPN
+490. Comodo VPN
+491. Avira Phantom VPN
+492. BullGuard VPN
+493. Eset VPN
+494. Sophos VPN
+495. Check Point VPN
+496. Fortinet FortiClient
+497. Palo Alto GlobalProtect
+498. Cisco AnyConnect
+499. Pulse Secure
+500. F5 BIG-IP
+
+==========================================
+DATABASES & DATA (501-600)
+==========================================
+501. MongoDB
+502. PostgreSQL
+503. MySQL
+504. Redis
+505. Elasticsearch
+506. Apache Kafka
+507. Apache Spark
+508. Snowflake
+509. Databricks
+510. Tableau
+511. MariaDB
+512. SQLite
+513. SQL Server
+514. Oracle Database
+515. IBM DB2
+516. SAP HANA
+517. Cassandra
+518. CouchDB
+519. Couchbase
+520. Neo4j
+521. ArangoDB
+522. OrientDB
+523. Amazon DynamoDB
+524. Amazon RDS
+525. Amazon Redshift
+526. Amazon Aurora
+527. Amazon DocumentDB
+528. Amazon Neptune
+529. Amazon ElastiCache
+530. Amazon Timestream
+531. Google Cloud SQL
+532. Google Cloud Spanner
+533. Google Cloud Bigtable
+534. Google Cloud Firestore
+535. Google Cloud Datastore
+536. Google Cloud Memorystore
+537. Azure SQL Database
+538. Azure Cosmos DB
+539. Azure Database for MySQL
+540. Azure Database for PostgreSQL
+541. Azure Database for MariaDB
+542. Azure Cache for Redis
+543. Azure Data Lake
+544. Azure Synapse Analytics
+545. Azure Databricks
+546. Azure HDInsight
+547. Azure Stream Analytics
+548. Azure Data Factory
+549. Azure Data Explorer
+550. Azure Time Series Insights
+551. InfluxDB
+552. TimescaleDB
+553. QuestDB
+554. ClickHouse
+555. Druid
+556. Pinot
+557. Kudu
+558. HBase
+559. Accumulo
+560. Riak
+561. Aerospike
+562. ScyllaDB
+563. FoundationDB
+564. CockroachDB
+565. YugabyteDB
+566. TiDB
+567. Vitess
+568. PlanetScale
+569. Neon
+570. Supabase
+571. Firebase
+572. Realm
+573. PouchDB
+574. RxDB
+575. WatermelonDB
+576. LokiJS
+577. Lowdb
+578. NeDB
+579. Minimongo
+580. TingoDB
+581. LevelDB
+582. RocksDB
+583. Berkeley DB
+584. LMDB
+585. WiredTiger
+586. TokuDB
+587. MyRocks
+588. Percona Server
+589. Percona XtraDB Cluster
+590. Galera Cluster
+591. MySQL Cluster
+592. MySQL Group Replication
+593. MySQL InnoDB Cluster
+594. MySQL Router
+595. MySQL Shell
+596. MySQL Workbench
+597. phpMyAdmin
+598. Adminer
+599. DBeaver
+600. DataGrip
+
+==========================================
+COMMUNICATION & SOCIAL (601-700)
+==========================================
+601. Discord
+602. Telegram
+603. WhatsApp
+604. Signal
+605. Twitter/X
+606. LinkedIn
+607. Facebook
+608. Instagram
+609. TikTok
+610. Reddit
+611. WeChat
+612. QQ
+613. LINE
+614. Viber
+615. Skype
+616. FaceTime
+617. iMessage
+618. Google Messages
+619. RCS
+620. SMS
+621. MMS
+622. Email
+623. IRC
+624. XMPP
+625. Matrix
+626. Mattermost
+627. Rocket.Chat
+628. Zulip
+629. Element
+630. Riot
+631. Wire
+632. Threema
+633. Wickr
+634. Session
+635. Briar
+636. Tox
+637. RetroShare
+638. Freenet
+639. I2P
+640. Tor
+641. Tor Browser
+642. Orbot
+643. Orfox
+644. Onion Browser
+645. Brave Browser
+646. Firefox
+647. Chrome
+648. Safari
+649. Edge
+650. Opera
+651. Vivaldi
+652. Brave
+653. Tor Browser
+654. DuckDuckGo Browser
+655. Epic Browser
+656. Pale Moon
+657. Waterfox
+658. Basilisk
+659. SeaMonkey
+660. K-Meleon
+661. Otter Browser
+662. Falkon
+663. QupZilla
+664. Midori
+665. Konqueror
+666. Rekonq
+667. Arora
+668. Dooble
+669. Uzbl
+670. Luakit
+671. Surf
+672. NetSurf
+673. Dillo
+674. Links
+675. Lynx
+676. w3m
+677. elinks
+678. Links2
+679. EWW
+680. Nyxt
+681. qutebrowser
+682. Vimb
+683. Min
+684. Beaker Browser
+685. Brave Browser
+686. Firefox Focus
+687. Chrome Canary
+688. Firefox Nightly
+689. Safari Technology Preview
+690. Edge Canary
+691. Opera Beta
+692. Vivaldi Snapshot
+693. Brave Nightly
+694. Tor Browser Alpha
+695. DuckDuckGo Browser Beta
+696. Epic Browser Beta
+697. Pale Moon Beta
+698. Waterfox Beta
+699. Basilisk Beta
+700. SeaMonkey Beta
+
+==========================================
+ENTERPRISE & BUSINESS (701-850)
+==========================================
+701. Salesforce
+702. SAP
+703. Oracle Database
+704. ServiceNow
+705. Workday
+706. Zendesk
+707. HubSpot
+708. Stripe
+709. PayPal
+710. Square
+711. Shopify
+712. WooCommerce
+713. Magento
+714. BigCommerce
+715. PrestaShop
+716. OpenCart
+717. osCommerce
+718. Zen Cart
+719. X-Cart
+720. CS-Cart
+721. nopCommerce
+722. Spree Commerce
+723. Solidus
+724. Sylius
+725. Reaction Commerce
+726. Medusa
+727. Vendure
+728. Saleor
+729. Commerce.js
+730. Snipcart
+731. Foxy.io
+732. Chargebee
+733. Recurly
+734. Zuora
+735. Chargify
+736. Paddle
+737. FastSpring
+738. Gumroad
+739. Selz
+740. SendOwl
+741. E-junkie
+742. Payhip
+743. FetchApp
+744. Pulley
+745. Lemon Squeezy
+746. PayKickstart
+747. ThriveCart
+748. SamCart
+749. ClickBank
+750. JVZoo
+751. Warrior Plus
+752. Commission Junction
+753. ShareASale
+754. Rakuten Advertising
+755. Impact Radius
+756. Awin
+757. PartnerStack
+758. Tapfiliate
+759. FirstPromoter
+760. ReferralCandy
+761. Referral SaaSquatch
+762. Friendbuy
+763. Extole
+764. Mention Me
+765. Referral Factory
+766. Referral Rock
+767. GrowSurf
+768. Viral Loops
+769. KickoffLabs
+770. UpViral
+771. Gleam
+772. Rafflecopter
+773. KingSumo
+774. Vyper
+775. Wishpond
+776. ShortStack
+777. Woobox
+778. Heyo
+779. Offerpop
+780. Strutta
+781. Votigo
+782. Binkd
+783. PromoSimple
+784. Easypromos
+785. PromoRepublic
+786. Socialbakers
+787. Sprout Social
+788. Hootsuite
+789. Buffer
+790. Later
+791. CoSchedule
+792. MeetEdgar
+793. SocialOomph
+794. TweetDeck
+795. Twitter Analytics
+796. Facebook Analytics
+797. Instagram Analytics
+798. LinkedIn Analytics
+799. Pinterest Analytics
+800. Snapchat Analytics
+801. TikTok Analytics
+802. YouTube Analytics
+803. Google Analytics
+804. Adobe Analytics
+805. Mixpanel
+806. Amplitude
+807. Segment
+808. Heap
+809. Kissmetrics
+810. Crazy Egg
+811. Hotjar
+812. FullStory
+813. LogRocket
+814. Sentry
+815. Rollbar
+816. Bugsnag
+817. Airbrake
+818. Raygun
+819. Honeybadger
+820. Errbit
+821. Exceptionless
+822. GlitchTip
+823. Sentry
+824. Rollbar
+825. Bugsnag
+826. Airbrake
+827. Raygun
+828. Honeybadger
+829. Errbit
+830. Exceptionless
+831. GlitchTip
+832. Sentry
+833. Rollbar
+834. Bugsnag
+835. Airbrake
+836. Raygun
+837. Honeybadger
+838. Errbit
+839. Exceptionless
+840. GlitchTip
+841. Sentry
+842. Rollbar
+843. Bugsnag
+844. Airbrake
+845. Raygun
+846. Honeybadger
+847. Errbit
+848. Exceptionless
+849. GlitchTip
+850. Sentry
+
+==========================================
+MONITORING & OBSERVABILITY (851-950)
+==========================================
+851. New Relic
+852. Datadog
+853. Dynatrace
+854. AppDynamics
+855. Elastic APM
+856. Instana
+857. Lightstep
+858. Honeycomb
+859. Chronosphere
+860. Grafana
+861. Prometheus
+862. InfluxDB
+863. TimescaleDB
+864. QuestDB
+865. ClickHouse
+866. Druid
+867. Pinot
+868. Kudu
+869. HBase
+870. Accumulo
+871. Riak
+872. Aerospike
+873. ScyllaDB
+874. FoundationDB
+875. CockroachDB
+876. YugabyteDB
+877. TiDB
+878. Vitess
+879. PlanetScale
+880. Neon
+881. Supabase
+882. Firebase
+883. Realm
+884. PouchDB
+885. RxDB
+886. WatermelonDB
+887. LokiJS
+888. Lowdb
+889. NeDB
+890. Minimongo
+891. TingoDB
+892. LevelDB
+893. RocksDB
+894. Berkeley DB
+895. LMDB
+896. WiredTiger
+897. TokuDB
+898. MyRocks
+899. Percona Server
+900. Percona XtraDB Cluster
+
+==========================================
+OPEN SOURCE & UTILITIES (951-1000)
+==========================================
+951. WordPress
+952. Apache HTTP Server
+953. Nginx
+954. Node.js
+955. Python
+956. OpenSSL
+957. OpenSSH
+958. curl
+959. Git
+960. Linux distributions (Ubuntu, RHEL, etc.)
+961. Apache Tomcat
+962. Apache Maven
+963. Apache Ant
+964. Apache Gradle
+965. Apache Groovy
+966. Apache Kafka
+967. Apache Spark
+968. Apache Flink
+969. Apache Storm
+970. Apache Beam
+971. Apache Airflow
+972. Apache NiFi
+973. Apache Superset
+974. Apache Druid
+975. Apache Pinot
+976. Apache Kudu
+977. Apache HBase
+978. Apache Accumulo
+979. Apache Cassandra
+980. Apache CouchDB
+981. Apache Solr
+982. Apache Lucene
+983. Apache Tika
+984. Apache POI
+985. Apache Commons
+986. Apache Log4j
+987. Apache Log4j2
+988. Apache Logback
+989. Apache SLF4J
+990. Apache Commons Logging
+991. Apache Commons Math
+992. Apache Commons Lang
+993. Apache Commons IO
+994. Apache Commons Codec
+995. Apache Commons Collections
+996. Apache Commons Validator
+997. Apache Commons BeanUtils
+998. Apache Commons Digester
+999. Apache Commons Configuration
+1000. Apache Commons CLI
+
