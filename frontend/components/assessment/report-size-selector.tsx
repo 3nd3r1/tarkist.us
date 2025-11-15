@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ReportSize } from '@/lib/types';
 import { FileText, Zap, Eye, Maximize, BookOpen } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
 interface ReportSizeSelectorProps {
   selectedSize: ReportSize;
@@ -54,15 +56,18 @@ const sizeConfig = {
 };
 
 export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSelectorProps) {
+  const { theme } = useTheme();
+  const isMatrix = theme === 'matrix';
+
   return (
     <Card className="border-2 border-primary/20">
       <CardContent className="p-6">
         <div className="flex items-center gap-2 mb-4">
-          <FileText className="h-5 w-5 text-primary" />
-          <h3 className="font-semibold text-lg">Report Detail Level</h3>
+          <FileText className={cn("h-5 w-5 text-primary", isMatrix && "text-[#00ff00]")} />
+          <h3 className={cn("font-semibold text-lg", isMatrix && "text-[#00ff00]")}>Report Detail Level</h3>
         </div>
         
-        <p className="text-sm text-muted-foreground mb-4">
+        <p className={cn("text-sm text-muted-foreground mb-4", isMatrix && "text-[#00ff00]/80")}>
           Choose how much detail you want to see in this assessment. You can change this at any time.
         </p>
 
@@ -75,13 +80,14 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
               <button
                 key={size}
                 onClick={() => onSizeChange(size)}
-                className={`
-                  relative overflow-hidden rounded-lg border-2 p-4 text-left transition-all duration-300
-                  ${isSelected 
+                className={cn(
+                  "relative overflow-hidden rounded-lg border-2 p-4 text-left transition-all duration-300",
+                  isSelected 
                     ? `${config.bgColor} shadow-lg scale-105` 
-                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-md'
-                  }
-                `}
+                    : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-md',
+                  isMatrix && isSelected && "border-[#00ff00] bg-[#00ff00]/10 shadow-[0_0_20px_rgba(0,255,0,0.3)]",
+                  isMatrix && !isSelected && "border-[#00ff00]/30 hover:border-[#00ff00]/50 hover:bg-[#00ff00]/5 hover:shadow-[0_0_10px_rgba(0,255,0,0.2)]"
+                )}
               >
                 {/* Background gradient on hover */}
                 {!isSelected && (
@@ -92,8 +98,11 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
                 {/* Selected indicator */}
                 {isSelected && (
                   <div className="absolute top-2 right-2">
-                    <div className={`h-6 w-6 rounded-full bg-gradient-to-br ${config.color} flex items-center justify-center`}>
-                      <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className={cn(
+                      `h-6 w-6 rounded-full bg-gradient-to-br ${config.color} flex items-center justify-center`,
+                      isMatrix && "bg-[#00ff00] shadow-[0_0_10px_rgba(0,255,0,0.6)]"
+                    )}>
+                      <svg className={cn("h-4 w-4 text-white", isMatrix && "text-black")} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -101,17 +110,34 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
                 )}
                 
                 <div className="relative">
-                  <div className={`p-2 rounded-lg inline-flex mb-3 ${isSelected ? 'bg-white/50 dark:bg-gray-900/50' : 'bg-gray-100 dark:bg-gray-800'}`}>
-                    <Icon className={`h-5 w-5 ${isSelected ? config.iconColor : 'text-muted-foreground'}`} />
+                  <div className={cn(
+                    "p-2 rounded-lg inline-flex mb-3",
+                    isSelected ? 'bg-white/50 dark:bg-gray-900/50' : 'bg-gray-100 dark:bg-gray-800',
+                    isMatrix && isSelected && "bg-[#00ff00]/20",
+                    isMatrix && !isSelected && "bg-[#00ff00]/5"
+                  )}>
+                    <Icon className={cn(
+                      "h-5 w-5",
+                      isSelected ? config.iconColor : 'text-muted-foreground',
+                      isMatrix && "text-[#00ff00]"
+                    )} />
                   </div>
                   
                   <div className="mb-2">
-                    <h4 className={`font-semibold text-base mb-1 ${isSelected ? config.textColor : ''}`}>
+                    <h4 className={cn(
+                      "font-semibold text-base mb-1",
+                      isSelected ? config.textColor : '',
+                      isMatrix && "text-[#00ff00]"
+                    )}>
                       {config.label}
                     </h4>
                   </div>
                   
-                  <p className={`text-xs ${isSelected ? config.textColor : 'text-muted-foreground'}`}>
+                  <p className={cn(
+                    "text-xs",
+                    isSelected ? config.textColor : 'text-muted-foreground',
+                    isMatrix && "text-[#00ff00]/80"
+                  )}>
                     {config.description}
                   </p>
                 </div>
@@ -121,20 +147,20 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
         </div>
 
         {/* Feature comparison */}
-        <div className="mt-6 pt-6 border-t">
-          <h4 className="text-sm font-semibold mb-3">What's Included</h4>
+        <div className={cn("mt-6 pt-6 border-t", isMatrix && "border-[#00ff00]/30")}>
+          <h4 className={cn("text-sm font-semibold mb-3", isMatrix && "text-[#00ff00]")}>What's Included</h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
             <div>
-              <div className="font-medium text-blue-600 dark:text-blue-400 mb-2">Small</div>
-              <ul className="space-y-1 text-muted-foreground">
+              <div className={cn("font-medium text-blue-600 dark:text-blue-400 mb-2", isMatrix && "text-[#00ff00]")}>Small</div>
+              <ul className={cn("space-y-1 text-muted-foreground", isMatrix && "text-[#00ff00]/80")}>
                 <li>• Key metrics</li>
                 <li>• Trust score</li>
                 <li>• Critical issues</li>
               </ul>
             </div>
             <div>
-              <div className="font-medium text-purple-600 dark:text-purple-400 mb-2">Medium</div>
-              <ul className="space-y-1 text-muted-foreground">
+              <div className={cn("font-medium text-purple-600 dark:text-purple-400 mb-2", isMatrix && "text-[#00ff00]")}>Medium</div>
+              <ul className={cn("space-y-1 text-muted-foreground", isMatrix && "text-[#00ff00]/80")}>
                 <li>• Everything in Small</li>
                 <li>• Detailed analysis</li>
                 <li>• Charts & graphs</li>
@@ -142,8 +168,8 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
               </ul>
             </div>
             <div>
-              <div className="font-medium text-orange-600 dark:text-orange-400 mb-2">Full</div>
-              <ul className="space-y-1 text-muted-foreground">
+              <div className={cn("font-medium text-orange-600 dark:text-orange-400 mb-2", isMatrix && "text-[#00ff00]")}>Full</div>
+              <ul className={cn("space-y-1 text-muted-foreground", isMatrix && "text-[#00ff00]/80")}>
                 <li>• Everything in Medium</li>
                 <li>• All evidence</li>
                 <li>• Complete history</li>
@@ -151,8 +177,8 @@ export function ReportSizeSelector({ selectedSize, onSizeChange }: ReportSizeSel
               </ul>
             </div>
             <div>
-              <div className="font-medium text-indigo-600 dark:text-indigo-400 mb-2">Enterprise</div>
-              <ul className="space-y-1 text-muted-foreground">
+              <div className={cn("font-medium text-indigo-600 dark:text-indigo-400 mb-2", isMatrix && "text-[#00ff00]")}>Enterprise</div>
+              <ul className={cn("space-y-1 text-muted-foreground", isMatrix && "text-[#00ff00]/80")}>
                 <li>• Everything in Full</li>
                 <li>• Complete audit trail</li>
                 <li>• All citations</li>

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { getDashboardStats } from "@/lib/api";
 import { Assessment } from "@/lib/types";
 import { getScoreColor, formatDate } from "@/lib/utils";
+import { ProductLogo } from "./product-logo";
 
 export function RecentAssessments() {
   const [assessments, setAssessments] = useState<Assessment[]>([]);
@@ -56,7 +57,7 @@ export function RecentAssessments() {
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="text-4xl">{assessment.product.logo}</div>
+                  <ProductLogo logo={assessment.product.logo} size="lg" />
                   <div>
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">
                       {assessment.product.name}

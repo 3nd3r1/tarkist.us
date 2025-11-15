@@ -34,6 +34,7 @@ import { AdminControlsGrid } from "@/components/assessment/admin-controls-grid";
 import { SecurityScoreBreakdown } from "@/components/assessment/security-score-breakdown";
 import { SaveAssessmentButton } from "@/components/assessment/save-assessment-button";
 import { AssessmentNotes } from "@/components/assessment/assessment-notes";
+import { ProductLogo } from "@/components/shared/product-logo";
 
 export default function AssessmentPage() {
   const params = useParams();
@@ -112,7 +113,7 @@ export default function AssessmentPage() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             {/* Product Info */}
             <div className="flex items-center gap-4">
-              <div className="text-6xl">{assessment.product.logo}</div>
+              <ProductLogo logo={assessment.product.logo} size="xl" />
               <div>
                 <h1 className="text-4xl font-bold">{assessment.product.name}</h1>
                 <p className="text-xl text-muted-foreground">by {assessment.product.vendor}</p>

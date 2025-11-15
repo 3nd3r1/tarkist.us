@@ -23,6 +23,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { getAllAssessments } from "@/lib/api";
 import { Assessment } from "@/lib/types";
 import { getScoreColor, formatDate } from "@/lib/utils";
+import { ProductLogo } from "@/components/shared/product-logo";
 
 type ViewMode = 'grid' | 'list';
 type SortOption = 'name-asc' | 'name-desc' | 'score-asc' | 'score-desc' | 'date-asc' | 'date-desc';
@@ -286,7 +287,7 @@ export default function HistoryPage() {
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="text-3xl">{assessment.product.logo}</div>
+                      <ProductLogo logo={assessment.product.logo} size="md" />
                       <div>
                         <CardTitle className="text-lg group-hover:text-primary transition-colors">
                           {assessment.product.name}
@@ -358,7 +359,7 @@ export default function HistoryPage() {
                   <div className="flex items-center justify-between gap-6">
                     {/* Left Section - Product Info */}
                     <div className="flex items-center gap-4 flex-1 min-w-0">
-                      <div className="text-4xl flex-shrink-0">{assessment.product.logo}</div>
+                      <ProductLogo logo={assessment.product.logo} size="lg" className="flex-shrink-0" />
                       <div className="flex-1 min-w-0">
                         <h3 className="text-xl font-semibold group-hover:text-primary transition-colors truncate">
                           {assessment.product.name}

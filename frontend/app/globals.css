@@ -203,6 +203,18 @@ html {
   animation: matrixGlow 2s ease-in-out infinite;
 }
 
+/* Matrix theme for gradient text elements */
+.matrix .matrix-hero-text,
+.matrix [class*="gradient-text"] {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #00ff00 !important;
+  color: #00ff00 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  animation: matrixGlow 2s ease-in-out infinite;
+}
+
 @keyframes matrixGlow {
   0%, 100% {
     filter: brightness(1);
@@ -255,13 +267,47 @@ html {
 }
 
 /* Matrix button effects */
+.matrix button {
+  border-color: rgba(0, 255, 0, 0.3) !important;
+  color: #00ff00 !important;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
 .matrix button:hover {
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  border-color: rgba(0, 255, 0, 0.6) !important;
+  background-color: rgba(0, 255, 0, 0.1) !important;
 }
 
 .matrix button:active {
   box-shadow: 0 0 25px rgba(0, 255, 0, 0.6);
+  background-color: rgba(0, 255, 0, 0.2) !important;
+}
+
+/* Matrix button variants */
+.matrix button[class*="bg-primary"],
+.matrix button[class*="bg-gradient"] {
+  background: linear-gradient(135deg, rgba(0, 255, 0, 0.2) 0%, rgba(0, 200, 0, 0.3) 100%) !important;
+  border-color: rgba(0, 255, 0, 0.5) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.matrix button[class*="bg-primary"]:hover,
+.matrix button[class*="bg-gradient"]:hover {
+  background: linear-gradient(135deg, rgba(0, 255, 0, 0.3) 0%, rgba(0, 200, 0, 0.4) 100%) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.matrix button[class*="outline"] {
+  background: transparent !important;
+  border-color: rgba(0, 255, 0, 0.4) !important;
+  color: #00ff00 !important;
+}
+
+.matrix button[class*="outline"]:hover {
+  background: rgba(0, 255, 0, 0.1) !important;
+  border-color: rgba(0, 255, 0, 0.6) !important;
 }
 
 /* Matrix card glow */

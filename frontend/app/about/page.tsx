@@ -81,7 +81,7 @@ export default function AboutPage() {
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent matrix-hero-text">
                 AI-Powered Security Intelligence
               </span>
             </h1>

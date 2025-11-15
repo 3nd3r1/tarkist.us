@@ -24,7 +24,7 @@ const mockAssessments: Assessment[] = [
       description: 'Cloud-based team communication and collaboration platform with channels, direct messaging, and extensive integrations.',
       usage: 'Internal team communication, project coordination, file sharing, workflow automation',
       website: 'https://slack.com',
-      logo: '🟣'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg'
     },
     trustScore: {
       score: 78,
@@ -245,7 +245,7 @@ const mockAssessments: Assessment[] = [
       description: 'Cloud-based software development platform providing Git repository hosting, code review, CI/CD, and collaboration tools.',
       usage: 'Version control, code collaboration, issue tracking, DevOps automation',
       website: 'https://github.com',
-      logo: '🐙'
+      logo: 'https://cdn.simpleicons.org/github/181717'
     },
     trustScore: {
       score: 88,
@@ -433,7 +433,7 @@ const mockAssessments: Assessment[] = [
       description: 'Video conferencing and online meeting platform with screen sharing, recording, and collaboration features.',
       usage: 'Video meetings, webinars, virtual events, team collaboration',
       website: 'https://zoom.us',
-      logo: '📹'
+      logo: 'https://cdn.simpleicons.org/zoom/2D8CFF'
     },
     trustScore: {
       score: 72,
@@ -578,7 +578,7 @@ const mockAssessments: Assessment[] = [
       description: 'All-in-one workspace for notes, tasks, wikis, and databases with collaborative features.',
       usage: 'Documentation, project management, knowledge base, personal notes',
       website: 'https://notion.so',
-      logo: '📝'
+      logo: 'https://cdn.simpleicons.org/notion/000000'
     },
     trustScore: {
       score: 68,
@@ -703,7 +703,7 @@ const mockAssessments: Assessment[] = [
       description: 'Free, open-source code editor with debugging, Git integration, and extensions marketplace.',
       usage: 'Software development, code editing, debugging, version control',
       website: 'https://code.visualstudio.com',
-      logo: '💻'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg'
     },
     trustScore: {
       score: 92,
@@ -828,7 +828,7 @@ const mockAssessments: Assessment[] = [
       description: 'Cloud file storage and synchronization service with sharing and collaboration features.',
       usage: 'File backup, sharing, collaboration, cloud storage',
       website: 'https://dropbox.com',
-      logo: '📦'
+      logo: 'https://cdn.simpleicons.org/dropbox/0061FF'
     },
     trustScore: {
       score: 81,
@@ -964,7 +964,7 @@ const mockAssessments: Assessment[] = [
       description: 'Collaborative design tool for UI/UX design, prototyping, and design systems.',
       usage: 'Interface design, prototyping, design collaboration, design systems',
       website: 'https://figma.com',
-      logo: '🎨'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg'
     },
     trustScore: {
       score: 76,

@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Shield, ShieldAlert, ShieldCheck, Info } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -23,29 +23,27 @@ export function TrustScoreCircle({
   animated = true,
   compact = false,
 }: TrustScoreCircleProps) {
-  const [displayScore, setDisplayScore] = useState(animated ? 0 : score);
+  // Use motion values to synchronize circle and number animations
+  const progress = useMotionValue(animated ? 0 : score);
+  const springProgress = useSpring(progress, {
+    stiffness: 50,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  
+  // Transform progress to display score (rounded)
+  const displayScore = useTransform(springProgress, (latest) => {
+    return Math.round(latest);
+  });
 
-  // Animate score count-up
+  // Update progress when score changes
   useEffect(() => {
-    if (!animated) return;
-
-    const duration = 1500; // 1.5 seconds for faster animation
-    const steps = 60;
-    const increment = score / steps;
-    let current = 0;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= score) {
-        setDisplayScore(score);
-        clearInterval(timer);
-      } else {
-        setDisplayScore(Math.floor(current));
-      }
-    }, duration / steps);
-
-    return () => clearInterval(timer);
-  }, [score, animated]);
+    if (animated) {
+      progress.set(score);
+    } else {
+      progress.set(score);
+    }
+  }, [score, animated, progress]);
 
   // Color and icon based on score
   const getScoreColor = (s: number) => {
@@ -84,7 +82,14 @@ export function TrustScoreCircle({
   const config = sizeConfig[size];
   const radius = (config.circle - config.stroke) / 2;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (displayScore / 100) * circumference;
+  
+  // Transform progress to circle offset - synchronized with number
+  const circleOffset = useTransform(springProgress, (latest) => {
+    return circumference - (latest / 100) * circumference;
+  });
+  
+  // Transform progress to percentage for progress bar indicator
+  const progressPercentage = useTransform(springProgress, (latest) => `${latest}%`);
 
   // Compact mode: just the circle without card wrapper
   if (compact) {
@@ -110,7 +115,7 @@ export function TrustScoreCircle({
                   className="text-muted-foreground/20"
                 />
                 
-                {/* Progress circle */}
+                {/* Progress circle - synchronized with number */}
                 <motion.circle
                   cx={config.circle / 2}
                   cy={config.circle / 2}
@@ -121,9 +126,7 @@ export function TrustScoreCircle({
                   strokeLinecap="round"
                   className={colors.bg}
                   strokeDasharray={circumference}
-                  initial={{ strokeDashoffset: circumference }}
-                  animate={{ strokeDashoffset: offset }}
-                  transition={{ duration: 1.5, ease: 'easeInOut' }}
+                  style={{ strokeDashoffset: circleOffset }}
                 />
               </svg>
 
@@ -132,26 +135,26 @@ export function TrustScoreCircle({
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.4, type: 'spring' }}
-                  className={colors.color}
+                  transition={{ delay: 0.1, duration: 0.3, type: 'spring', stiffness: 200 }}
+                  className={`${colors.color} -mt-2`}
                 >
                   <Icon size={config.icon} strokeWidth={2.5} />
                 </motion.div>
                 
                 <motion.div
-                  className={`font-bold ${config.text} ${colors.color} leading-none`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
+                  className={`font-bold ${config.text} ${colors.color} leading-none -mt-1.5`}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0, duration: 0.3, type: 'spring', stiffness: 200 }}
                 >
-                  {displayScore}
+                  <motion.span>{displayScore}</motion.span>
                 </motion.div>
                 
                 <motion.div
                   className={`${config.label} font-medium text-muted-foreground leading-tight mt-0.5`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.2 }}
                 >
                   {label}
                 </motion.div>
@@ -197,7 +200,7 @@ export function TrustScoreCircle({
             className="text-muted-foreground/20"
           />
           
-          {/* Progress circle */}
+          {/* Progress circle - synchronized with number */}
           <motion.circle
             cx={config.circle / 2}
             cy={config.circle / 2}
@@ -208,9 +211,7 @@ export function TrustScoreCircle({
             strokeLinecap="round"
             className={colors.bg}
             strokeDasharray={circumference}
-            initial={{ strokeDashoffset: circumference }}
-            animate={{ strokeDashoffset: offset }}
-            transition={{ duration: 1.5, ease: 'easeInOut' }}
+            style={{ strokeDashoffset: circleOffset }}
           />
         </svg>
 
@@ -219,26 +220,26 @@ export function TrustScoreCircle({
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.4, type: 'spring' }}
-            className={colors.color}
+            transition={{ delay: 0.1, duration: 0.3, type: 'spring', stiffness: 200 }}
+            className={`${colors.color} -mt-2`}
           >
             <Icon size={config.icon} strokeWidth={2.5} />
           </motion.div>
           
           <motion.div
-            className={`font-bold ${config.text} ${colors.color} leading-none`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            className={`font-bold ${config.text} ${colors.color} leading-none -mt-1.5`}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0, duration: 0.3, type: 'spring', stiffness: 200 }}
           >
-            {displayScore}
+            <motion.span>{displayScore}</motion.span>
           </motion.div>
           
           <motion.div
             className={`${config.label} font-medium text-muted-foreground leading-tight`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.2 }}
           >
             {label}
           </motion.div>
@@ -275,10 +276,10 @@ export function TrustScoreCircle({
         <div className="h-2 w-full rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-emerald-500 to-green-500 relative">
           <motion.div
             className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-2 border-foreground rounded-full shadow-lg"
-            initial={{ left: '0%' }}
-            animate={{ left: `${displayScore}%` }}
-            transition={{ duration: 1.5, ease: 'easeInOut' }}
-            style={{ marginLeft: '-6px' }}
+            style={{ 
+              left: progressPercentage,
+              marginLeft: '-6px'
+            }}
           />
         </div>
         <div className="flex justify-between text-xs text-muted-foreground mt-1.5">

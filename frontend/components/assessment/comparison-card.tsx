@@ -14,6 +14,7 @@ import {
   XCircle,
   AlertTriangle,
 } from 'lucide-react';
+import { ProductLogo } from '@/components/shared/product-logo';
 
 interface ComparisonMetric {
   name: string;
@@ -108,7 +109,7 @@ export function ComparisonCard({
               Winner
             </Badge>
           )}
-          <div className="text-3xl">{product1.logo || '📦'}</div>
+          <ProductLogo logo={product1.logo} size="md" />
           <div>
             <h3 className="font-semibold text-lg">{product1.name}</h3>
             <p className="text-sm text-muted-foreground">{product1.vendor}</p>
@@ -121,7 +122,7 @@ export function ComparisonCard({
               Winner
             </Badge>
           )}
-          <div className="text-3xl">{product2.logo || '📦'}</div>
+          <ProductLogo logo={product2.logo} size="md" />
           <div>
             <h3 className="font-semibold text-lg">{product2.name}</h3>
             <p className="text-sm text-muted-foreground">{product2.vendor}</p>
@@ -218,7 +219,7 @@ export function QuickCompare({ products }: QuickCompareProps) {
             >
               <Card className="p-4 hover:shadow-lg transition-all">
                 <div className="flex items-center gap-3">
-                  <div className="text-3xl">{product.logo || '📦'}</div>
+                  <ProductLogo logo={product.logo} size="md" />
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold truncate">{product.name}</h4>
                     <p className="text-xs text-muted-foreground truncate">
