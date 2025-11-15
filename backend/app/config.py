@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     VERSION: str = "0.1.0"
     API_V1_STR: str = "/api/v1"
 
+    DATABASE_URL: str = "sqlite:///./tarkk.db"
+
     GEMINI_API_KEY: str | None = None
     GEMINI_MODEL: str = "gemini-1.5-pro"
 
