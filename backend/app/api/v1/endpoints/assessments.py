@@ -4,7 +4,7 @@ from fastapi import APIRouter, BackgroundTasks, Depends
 from pydantic import BaseModel
 
 from app.dependencies import get_assessment_service
-from app.schemas.assessment import Assessment, AssessmentInputData, AssessmentType
+from app.schemas.assessment import Assessment, AssessmentInputData, AssessmentStatus, AssessmentType
 from app.services.assessment import AssessmentService
 
 router = APIRouter()
@@ -34,7 +34,7 @@ async def create_assesment(
 
     # Check if assessment already exists
     existing_assessment = await assessment_service.get_assessment_by_name(request.name)
-    if existing_assessment:
+    if existing_assessment and existing_assessment.assessment_status != AssessmentStatus.FAILED:
         return AssessmentCreateResponse(
             assessment_id=existing_assessment.id, status=existing_assessment.assessment_status.value
         )
