@@ -54,7 +54,7 @@ export function Navigation() {
               </Link>
               
               <div className="hidden md:flex items-center gap-4">
-                <Link href="/history" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/applications" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <Grid3x3 className="h-4 w-4" />
                   <span>Applications</span>
                 </Link>
@@ -130,7 +130,7 @@ export function Navigation() {
           {mobileMenuOpen && (
             <div className="md:hidden border-t py-4 space-y-3">
               <Link
-                href="/history"
+                href="/applications"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >

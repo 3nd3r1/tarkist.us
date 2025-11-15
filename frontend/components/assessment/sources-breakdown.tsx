@@ -12,8 +12,8 @@ interface SourcesBreakdownProps {
 
 export function SourcesBreakdown({ sources, reportSize = 'medium' }: SourcesBreakdownProps) {
   const totalSources = sources.public.count + sources.confidential.count;
-  const publicPercentage = Math.round((sources.public.count / totalSources) * 100);
-  const confidentialPercentage = 100 - publicPercentage;
+  const publicPercentage = totalSources === 0 ? 0 : Math.round((sources.public.count / totalSources) * 100);
+  const confidentialPercentage = totalSources === 0 ? 0 : 100 - publicPercentage;
 
   return (
     <Card>

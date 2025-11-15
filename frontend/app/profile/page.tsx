@@ -294,7 +294,7 @@ export default function ProfilePage() {
                 <p className="text-muted-foreground mb-4">
                   Start exploring applications and save your favorites
                 </p>
-                <Link href="/history">
+                <Link href="/applications">
                   <Button>
                     Browse Applications
                     <ArrowRight className="h-4 w-4 ml-2" />
@@ -361,7 +361,7 @@ export default function ProfilePage() {
               <p className="text-muted-foreground mb-4">
                 View and download your generated reports
               </p>
-              <Link href="/history">
+              <Link href="/applications">
                 <Button>
                   Generate New Report
                   <Download className="h-4 w-4 ml-2" />

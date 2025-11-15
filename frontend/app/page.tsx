@@ -84,8 +84,7 @@ export default function HomePage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-                Comprehensive third-party software security analysis across{" "}
-                <span className="font-semibold text-primary">15 dimensions</span>
+                AI-powered security intelligence for third-party software
               </p>
             </motion.div>
 

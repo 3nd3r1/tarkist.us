@@ -51,7 +51,7 @@ export function PlatformSupportGrid({ platformSupport, reportSize = 'medium' }: 
           </div>
           <div className="text-right">
             <div className={cn("text-3xl font-bold text-primary", isMatrix && "text-[#00ff00]")}>
-              {Math.round((supportedCount / totalCount) * 100)}%
+              {totalCount === 0 ? '0%' : `${Math.round((supportedCount / totalCount) * 100)}%`}
             </div>
             <div className={cn("text-xs text-muted-foreground", isMatrix && "text-[#00ff00]/70")}>Coverage</div>
           </div>
