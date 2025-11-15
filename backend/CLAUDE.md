@@ -46,25 +46,37 @@ make docker-logs    # Follow docker compose logs
   - `api/v1/` - API versioning structure
     - `routes.py` - Main router that combines all endpoint routers
     - `endpoints/` - Individual endpoint modules (health, assessments)
-  - `agents/` - AI agent functionality (placeholder)
+  - `agents/` - AI agent functionality with BaseAgent class and Jinja2 template system
+    - `base.py` - Generic BaseAgent with input/output validation and LLM integration
+    - `entity_resolution/` - Specific agent implementation with prompt templates
+  - `llm/` - LLM provider abstraction layer
+    - `base.py` - Abstract LLMProvider interface with generate() and generate_stream()
+    - `factory.py` - Provider factory pattern
+    - `providers/gemini.py` - Google Gemini integration
   - `schemas/` - Pydantic models for request/response validation
+    - `assessment.py` - Assessment data models
+    - `entity.py` - Entity resolution models
+    - `vendor.py` - Vendor information models
   - `services/` - Business logic layer
   - `utils/` - Utility modules including colored logging configuration
 
 ### Key Technologies
 - **FastAPI** - Web framework with automatic OpenAPI documentation
-- **Pydantic** - Data validation and settings management
+- **Pydantic** - Data validation and settings management with BaseSettings
 - **Uvicorn** - ASGI server for development
-- **Ruff** - Fast Python linter and formatter
+- **Ruff** - Fast Python linter and formatter (v0.14.5)
 - **MyPy** - Static type checking
 - **Pytest** - Testing framework with async support
 - **ColorLog** - Colored console logging
+- **Jinja2** - Template engine for AI agent prompts
+- **Google Gemini** - LLM provider integration
 
 ### Application Configuration
 - Environment variables loaded via `python-dotenv`
 - Settings managed through Pydantic BaseSettings in `config.py`
-- API versioning with `/api/v1` prefix
+- API versioning with `/api/v1` prefix  
 - Wide-open CORS policy for development
+- Google Gemini LLM configuration via `GEMINI_API_KEY` and `GEMINI_MODEL` env vars
 
 ### Current API Endpoints
 - `GET /` - Root endpoint with service info
@@ -81,14 +93,24 @@ make docker-logs    # Follow docker compose logs
 ## Development Notes
 
 ### Code Style
-- Uses Ruff for linting and formatting
-- MyPy for static type checking
+- Uses Ruff for linting and formatting (line length: 100 chars)
+- MyPy for static type checking with relaxed settings for development
 - Logging configured with colored output via ColorLog
+- Python 3.11+ target version
+- Import organization: known first-party package is `app`
+
+### Agent Architecture
+- **BaseAgent**: Generic agent class using type generics for input/output validation
+- **LLM Integration**: Abstract LLMProvider interface supporting both sync and streaming generation
+- **Template System**: Jinja2 templates for system/user prompts stored in agent subdirectories
+- **Error Handling**: Custom exceptions for agent validation and processing errors
+- **JSON Extraction**: Automatic parsing of LLM responses with markdown code block handling
 
 ### Testing Strategy
-- Pytest with async support
+- Pytest with async support and asyncio mode auto-enabled
 - pytest-cov for coverage reporting
 - Test files should be placed in a `tests/` directory (not yet created)
+- Async test support configured via pytest-asyncio
 
 ### Virtual Environment
 - Uses Python venv in `venv/` directory
