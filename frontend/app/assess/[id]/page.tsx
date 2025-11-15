@@ -191,23 +191,20 @@ export default function AssessmentPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="space-y-4"
           >
-            <div className="flex flex-col lg:flex-row gap-4">
-              <div className="flex-1">
-                <ReportSizeSelector 
-                  selectedSize={reportSize} 
-                  onSizeChange={setReportSize} 
-                />
-              </div>
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <ReportSizeSelector 
+                selectedSize={reportSize} 
+                onSizeChange={setReportSize} 
+              />
+              <div className="flex items-center gap-3 flex-wrap">
                 <AssessmentNotes assessmentId={assessment.id} />
                 <SaveAssessmentButton assessment={assessment} />
                 <Button 
                   onClick={handleDownloadPDF}
                   disabled={isGeneratingPDF}
                   size="lg"
-                  className="w-full lg:w-auto"
+                  className="w-full sm:w-auto"
                 >
                   {isGeneratingPDF ? (
                     <>
@@ -223,24 +220,6 @@ export default function AssessmentPage() {
                 </Button>
               </div>
             </div>
-            
-            {/* Report Size Information */}
-            <Card className="bg-muted/30">
-              <CardContent className="pt-4">
-                <div className="flex items-start gap-3">
-                  <div className="text-2xl">ℹ️</div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold mb-1">About {reportSize.charAt(0).toUpperCase() + reportSize.slice(1)} Reports</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {reportSize === 'small' && 'Executive summary with key findings, trust score, and high-level overview. Perfect for quick decision-making.'}
-                      {reportSize === 'medium' && 'Balanced report with security posture, vulnerabilities, and essential metrics. Ideal for technical teams.'}
-                      {reportSize === 'full' && 'Comprehensive deep dive including data privacy, technical details, compliance, and sources. Recommended for security audits.'}
-                      {reportSize === 'enterprise' && 'Complete analysis with all available data, detailed metrics, full incident history, and extensive citations. Designed for enterprise compliance and risk assessment.'}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </motion.div>
 
           {/* Trust Score Rationale */}
