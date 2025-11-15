@@ -5,6 +5,7 @@ from uuid import UUID
 from pydantic import BaseModel, Field
 
 from app.schemas.entity import Entity
+from app.schemas.vendor import Vendor
 
 if TYPE_CHECKING:
     from app.models.assessment import Assessment as AssessmentModel
@@ -44,6 +45,7 @@ class Assessment(BaseModel):
     )
 
     entity: Entity | None = None
+    vendor: Vendor | None = None
 
     @classmethod
     def from_model(cls, db_assessment: "AssessmentModel") -> "Assessment":
@@ -59,10 +61,15 @@ class Assessment(BaseModel):
         if db_assessment.entity_data is not None:
             entity = Entity.model_validate(db_assessment.entity_data)
 
+        vendor = None
+        if db_assessment.vendor_data is not None:
+            vendor = Vendor.model_validate(db_assessment.vendor_data)
+
         return cls(
             id=UUID(str(db_assessment.id)),
             input_data=input_data,
             assessment_type=AssessmentType(db_assessment.assessment_type),
             assessment_status=AssessmentStatus(db_assessment.assessment_status),
             entity=entity,
+            vendor=vendor,
         )

@@ -2,8 +2,6 @@ from enum import Enum
 
 from pydantic import BaseModel, Field
 
-from app.schemas.vendor import Vendor
-
 
 class EntityCategory(str, Enum):
     FILESHARING = "filesharing"
@@ -12,9 +10,15 @@ class EntityCategory(str, Enum):
     CRM = "crm"
 
 
+class EntityVendor(BaseModel):
+    name: str = Field(..., description="The name of the vendor")
+    website: str | None = Field(None, description="The vendor's website URL")
+    logo_url: str | None = Field(None, description="URL to the vendor's logo image")
+
+
 class Entity(BaseModel):
     name: str = Field(..., description="The name of the product")
-    vendor: Vendor = Field(..., description="The vendor of the product")
+    vendor: EntityVendor = Field(..., description="The vendor of the product")
     category: EntityCategory = Field(..., description="The category of the product")
     description: str = Field(..., description="A brief description of the product")
     usage: str = Field(..., description="How the product is typically used")
