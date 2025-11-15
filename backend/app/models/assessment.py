@@ -29,6 +29,9 @@ class Assessment(Base):
     # Entity data (stored as JSON when resolved)
     entity_data: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
 
+    # Vendor information data (stored as JSON when resolved)
+    vendor_data: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
+
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(
