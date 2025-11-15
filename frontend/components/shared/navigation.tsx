@@ -38,135 +38,101 @@ export function Navigation() {
   return (
     <>
       <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-    <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="h-16 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-              <Shield className="h-6 w-6 text-primary" />
-              <span className="gradient-text">Security Assessor</span>
-            </Link>
-            
-            <div className="hidden md:flex items-center gap-4">
-              <Link href="/history" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                <Grid3x3 className="h-4 w-4" />
-                <span>Applications</span>
+        <div className="container mx-auto px-4">
+          <div className="h-16 flex items-center justify-between">
+            <div className="flex items-center gap-6">
+              <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+                <Shield className="h-6 w-6 text-primary" />
+                <span className="gradient-text">Security Assessor</span>
               </Link>
-              <Link href="/about" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                <Info className="h-4 w-4" />
-                <span>About</span>
-              </Link>
-              <Link href="/pricing" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                <DollarSign className="h-4 w-4" />
-                <span>Pricing</span>
-              </Link>
+              
+              <div className="hidden md:flex items-center gap-4">
+                <Link href="/history" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Grid3x3 className="h-4 w-4" />
+                  <span>Applications</span>
+                </Link>
+                <Link href="/about" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Info className="h-4 w-4" />
+                  <span>About</span>
+                </Link>
+                <Link href="/pricing" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <DollarSign className="h-4 w-4" />
+                  <span>Pricing</span>
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t py-4 space-y-3">
-            <Link
-              href="/history"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Grid3x3 className="h-4 w-4" />
-              <span>Applications</span>
-            </Link>
-            <Link
-              href="/about"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Info className="h-4 w-4" />
-              <span>About</span>
-            </Link>
-            <Link
-              href="/pricing"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <DollarSign className="h-4 w-4" />
-              <span>Pricing</span>
-            </Link>
-            
-            <div className="hidden md:flex items-center gap-4">
-              <Link href="/history" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                <Grid3x3 className="h-4 w-4" />
-                <span>Applications</span>
-              </Link>
-              <Link href="/about" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                <Info className="h-4 w-4" />
-                <span>About</span>
-              </Link>
-              <Link href="/pricing" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                <DollarSign className="h-4 w-4" />
-                <span>Pricing</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
-
-            {isAuthenticated ? (
-              <UserMenu />
-            ) : (
-              <Button onClick={() => setAuthModalOpen(true)} size="sm">
-                <LogIn className="h-4 w-4 mr-2" />
-                Sign In
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
               </Button>
-            )}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </Button>
+
+              {isAuthenticated ? (
+                <UserMenu />
+              ) : (
+                <Button onClick={() => setAuthModalOpen(true)} size="sm">
+                  <LogIn className="h-4 w-4 mr-2" />
+                  Sign In
+                </Button>
+              )}
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden border-t py-4 space-y-3">
+              <Link
+                href="/history"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Grid3x3 className="h-4 w-4" />
+                <span>Applications</span>
+              </Link>
+              <Link
+                href="/about"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Info className="h-4 w-4" />
+                <span>About</span>
+              </Link>
+              <Link
+                href="/pricing"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <DollarSign className="h-4 w-4" />
+                <span>Pricing</span>
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
 
       <AuthModal open={authModalOpen} onOpenChange={setAuthModalOpen} />
     </>
-        )}
-      </div>
-    </nav>
   );
 }
