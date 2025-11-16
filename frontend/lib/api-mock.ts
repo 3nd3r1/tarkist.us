@@ -38,7 +38,7 @@ const mockAssessments: Assessment[] = [
       founded: 2013,
       reputation: {
         score: 82,
-        summary: 'Well-established enterprise communication platform with strong security posture, acquired by Salesforce in 2021.',
+        summary: 'Well-established enterprise communication platform with strong security posture, acquired by Salesforce in July 2021.',
         sources: [
           { id: 'c1', type: 'independent', title: 'Gartner Magic Quadrant', verified: true, date: '2025-01' }
         ]
@@ -48,14 +48,14 @@ const mockAssessments: Assessment[] = [
     },
     platformSupport: {
       platforms: [
-        { name: 'macOS', supported: true, versions: '10.14+', securityModel: 'Sandboxed app' },
-        { name: 'Windows', supported: true, versions: '10+', securityModel: 'Standard application' },
-        { name: 'Linux', supported: true, versions: 'Ubuntu 18.04+, Fedora 28+' },
-        { name: 'iOS', supported: true, versions: '15.0+', securityModel: 'App Sandbox' },
-        { name: 'Android', supported: true, versions: '8.0+', securityModel: 'Android permissions' },
-        { name: 'Web', supported: true, securityModel: 'Browser-based' }
+        { name: 'macOS', supported: true, versions: '11.0+ (Big Sur)', securityModel: 'Sandboxed app with hardened runtime' },
+        { name: 'Windows', supported: true, versions: '10+ / Windows 11', securityModel: 'Standard application with code signing' },
+        { name: 'Linux', supported: true, versions: 'Ubuntu 20.04+, Fedora 34+, Debian 11+', securityModel: 'AppImage/Snap with sandboxing' },
+        { name: 'iOS', supported: true, versions: '15.0+', securityModel: 'App Sandbox with strict permissions' },
+        { name: 'Android', supported: true, versions: '8.0+ (API 26+)', securityModel: 'Android permissions with runtime checks' },
+        { name: 'Web', supported: true, securityModel: 'Browser-based with CSP and secure headers' }
       ],
-      versionDifferences: 'All platforms feature-parity. Mobile apps have biometric authentication.'
+      versionDifferences: 'All platforms feature-parity. Mobile apps have biometric authentication and secure enclave integration.'
     },
     dataHandling: {
       storage: {
@@ -141,7 +141,7 @@ const mockAssessments: Assessment[] = [
       cisaKEV: false
     },
     releaseLifecycle: {
-      latestVersion: '4.36.140',
+      latestVersion: '4.47.59',
       releaseFrequency: 'Weekly updates',
       patchCadence: 'Critical patches within 48h, regular updates weekly',
       eolDates: [
@@ -150,9 +150,9 @@ const mockAssessments: Assessment[] = [
       ],
       ltsVersions: ['4.x'],
       versionHistory: [
-        { version: '4.36.140', releaseDate: '2025-11-10', securityFixes: 0 },
-        { version: '4.36.135', releaseDate: '2025-11-03', securityFixes: 1 },
-        { version: '4.35.121', releaseDate: '2025-10-20', securityFixes: 2 }
+        { version: '4.47.59', releaseDate: '2025-11-10', securityFixes: 0 },
+        { version: '4.46.104', releaseDate: '2025-10-21', securityFixes: 0 },
+        { version: '4.46.99', releaseDate: '2025-09-22', securityFixes: 1 }
       ]
     },
     aiFeatures: {
@@ -160,13 +160,18 @@ const mockAssessments: Assessment[] = [
       features: [
         {
           name: 'Slack AI',
-          description: 'Thread summaries, channel recaps, and search answers',
-          dataAccess: ['messages', 'files', 'channel history']
+          description: 'Thread summaries, channel recaps, search answers, and intelligent message composition',
+          dataAccess: ['messages', 'files', 'channel history', 'workspace context']
         },
         {
           name: 'Smart Suggestions',
-          description: 'Auto-complete and emoji suggestions',
-          dataAccess: ['message content', 'emoji usage']
+          description: 'Auto-complete, emoji suggestions, and contextual recommendations',
+          dataAccess: ['message content', 'emoji usage', 'user behavior patterns']
+        },
+        {
+          name: 'AI Workflow Builder',
+          description: 'Automated workflow generation and optimization suggestions',
+          dataAccess: ['workflow patterns', 'integration usage', 'automation history']
         }
       ],
       dataUsedForTraining: true,
@@ -362,13 +367,23 @@ const mockAssessments: Assessment[] = [
       features: [
         {
           name: 'GitHub Copilot',
-          description: 'AI pair programmer for code completion and generation',
-          dataAccess: ['code context', 'comments', 'repository structure']
+          description: 'AI pair programmer for code completion and generation with multi-file context',
+          dataAccess: ['code context', 'comments', 'repository structure', 'open files']
         },
         {
           name: 'Copilot Chat',
-          description: 'Conversational AI for coding assistance',
-          dataAccess: ['code', 'documentation', 'issues']
+          description: 'Conversational AI for coding assistance with codebase understanding',
+          dataAccess: ['code', 'documentation', 'issues', 'pull requests', 'discussions']
+        },
+        {
+          name: 'Copilot Workspace',
+          description: 'AI-powered workspace for planning and implementing features end-to-end',
+          dataAccess: ['entire codebase', 'project structure', 'dependencies', 'test files']
+        },
+        {
+          name: 'Copilot Enterprise',
+          description: 'Enterprise-grade AI with data isolation and compliance controls',
+          dataAccess: ['code within organization', 'private repositories only']
         }
       ],
       dataUsedForTraining: true,
@@ -436,9 +451,9 @@ const mockAssessments: Assessment[] = [
       logo: 'https://cdn.simpleicons.org/zoom/2D8CFF'
     },
     trustScore: {
-      score: 72,
-      rationale: 'Improved security posture post-2020, but concerns remain around end-to-end encryption implementation and data privacy practices.',
-      confidence: 82
+      score: 79,
+      rationale: 'Significantly improved security posture since 2020. End-to-end encryption available for paid plans. Strong compliance certifications and transparent security practices.',
+      confidence: 85
     },
     vendorInfo: {
       companyName: 'Zoom Video Communications',
@@ -455,13 +470,14 @@ const mockAssessments: Assessment[] = [
     },
     platformSupport: {
       platforms: [
-        { name: 'macOS', supported: true, versions: '10.10+' },
-        { name: 'Windows', supported: true, versions: '7+' },
-        { name: 'Linux', supported: true },
-        { name: 'iOS', supported: true, versions: '12.0+' },
-        { name: 'Android', supported: true, versions: '5.0+' },
-        { name: 'Web', supported: true }
-      ]
+        { name: 'macOS', supported: true, versions: '11.0+ (Big Sur)', securityModel: 'Hardened runtime with notarization' },
+        { name: 'Windows', supported: true, versions: '10+ / Windows 11', securityModel: 'Code signed with certificate pinning' },
+        { name: 'Linux', supported: true, versions: 'Ubuntu 18.04+, RHEL 7+, Debian 10+', securityModel: 'AppImage with sandboxing' },
+        { name: 'iOS', supported: true, versions: '13.0+', securityModel: 'App Sandbox with strict permissions' },
+        { name: 'Android', supported: true, versions: '7.0+ (API 24+)', securityModel: 'Android permissions with runtime checks' },
+        { name: 'Web', supported: true, securityModel: 'Browser-based with E2EE support (paid plans)' }
+      ],
+      versionDifferences: 'Desktop apps support end-to-end encryption (E2EE) for meetings. Web client has limited E2EE support.'
     },
     dataHandling: {
       storage: {
@@ -522,17 +538,38 @@ const mockAssessments: Assessment[] = [
       cisaKEV: false
     },
     releaseLifecycle: {
-      latestVersion: '5.17.5',
-      releaseFrequency: 'Monthly updates',
-      patchCadence: 'Critical patches within 72h',
-      eolDates: [],
-      ltsVersions: [],
-      versionHistory: []
+      latestVersion: '6.1.3',
+      releaseFrequency: 'Bi-weekly updates',
+      patchCadence: 'Critical patches within 24-48h, security updates weekly',
+      eolDates: [
+        { version: '4.x', date: '2024-12-31' },
+        { version: '3.x', date: '2023-06-30' }
+      ],
+      ltsVersions: ['6.x'],
+      versionHistory: [
+        { version: '6.1.3', releaseDate: '2025-11-08', securityFixes: 2 },
+        { version: '6.1.0', releaseDate: '2025-10-25', securityFixes: 1 },
+        { version: '6.0.15', releaseDate: '2025-10-11', securityFixes: 3 }
+      ]
     },
     aiFeatures: {
       hasAI: true,
       features: [
-        { name: 'AI Companion', description: 'Meeting summaries and action items', dataAccess: ['meeting transcripts', 'chat'] }
+        { 
+          name: 'Zoom AI Companion', 
+          description: 'Meeting summaries, action items, smart recordings, and real-time translation',
+          dataAccess: ['meeting transcripts', 'chat', 'audio/video content', 'screen shares']
+        },
+        {
+          name: 'Meeting Insights',
+          description: 'AI-powered analytics and engagement metrics',
+          dataAccess: ['meeting patterns', 'participation data', 'content analysis']
+        },
+        {
+          name: 'Smart Scheduling',
+          description: 'AI assistant for optimal meeting scheduling',
+          dataAccess: ['calendar data', 'availability patterns', 'preferences']
+        }
       ],
       dataUsedForTraining: true,
       canOptOut: true,
@@ -553,10 +590,13 @@ const mockAssessments: Assessment[] = [
       ]
     },
     compliance: {
-      certifications: ['SOC 2', 'ISO 27001', 'HIPAA', 'GDPR Compliant'],
-      dataHandlingSummary: 'Good data protection with regional storage options',
+      certifications: ['SOC 2 Type II', 'ISO 27001', 'ISO 27017', 'ISO 27018', 'HIPAA', 'GDPR Compliant', 'FedRAMP Moderate', 'Common Criteria EAL2'],
+      dataHandlingSummary: 'Enterprise-grade data protection with regional storage options, end-to-end encryption available, and comprehensive compliance certifications.',
       dpa: true,
-      sources: []
+      sources: [
+        { id: 'zoom1', type: 'compliance-cert', title: 'Zoom Trust Center', verified: true, date: '2025-09' },
+        { id: 'zoom2', type: 'vendor-stated', title: 'Zoom Security White Paper', verified: true, date: '2025-08' }
+      ]
     },
     sources: {
       public: { count: 42, types: [{ type: 'Vendor Documentation', count: 20 }, { type: 'Security Research', count: 22 }] },
@@ -600,13 +640,14 @@ const mockAssessments: Assessment[] = [
     },
     platformSupport: {
       platforms: [
-        { name: 'macOS', supported: true },
-        { name: 'Windows', supported: true },
+        { name: 'macOS', supported: true, versions: '11.0+', securityModel: 'Native app with sandboxing' },
+        { name: 'Windows', supported: true, versions: '10+', securityModel: 'Native app with code signing' },
         { name: 'Linux', supported: false },
-        { name: 'iOS', supported: true },
-        { name: 'Android', supported: true },
-        { name: 'Web', supported: true }
-      ]
+        { name: 'iOS', supported: true, versions: '15.0+', securityModel: 'App Sandbox' },
+        { name: 'Android', supported: true, versions: '8.0+', securityModel: 'Android permissions' },
+        { name: 'Web', supported: true, securityModel: 'Browser-based (primary platform)' }
+      ],
+      versionDifferences: 'Web platform is primary. Desktop apps provide offline access and better performance for large workspaces.'
     },
     dataHandling: {
       storage: {
@@ -667,7 +708,21 @@ const mockAssessments: Assessment[] = [
     aiFeatures: {
       hasAI: true,
       features: [
-        { name: 'Notion AI', description: 'Writing assistance and content generation', dataAccess: ['page content'] }
+        { 
+          name: 'Notion AI', 
+          description: 'Writing assistance, content generation, summarization, translation, and Q&A',
+          dataAccess: ['page content', 'database entries', 'workspace context', 'linked pages']
+        },
+        {
+          name: 'AI Autofill',
+          description: 'Intelligent database field completion and data extraction',
+          dataAccess: ['database schemas', 'field values', 'related content']
+        },
+        {
+          name: 'AI Blocks',
+          description: 'AI-powered content blocks for various use cases',
+          dataAccess: ['block context', 'surrounding content', 'workspace templates']
+        }
       ],
       dataUsedForTraining: false,
       canOptOut: true,
@@ -678,10 +733,12 @@ const mockAssessments: Assessment[] = [
       timeline: []
     },
     compliance: {
-      certifications: ['SOC 2 Type II', 'GDPR Compliant'],
-      dataHandlingSummary: 'Good data protection for a growing platform',
+      certifications: ['SOC 2 Type II', 'ISO 27001', 'GDPR Compliant', 'HIPAA (Business Associate Agreement available)'],
+      dataHandlingSummary: 'Enterprise-grade data protection with encryption at rest and in transit. GDPR-compliant with data residency options for EU customers.',
       dpa: true,
-      sources: []
+      sources: [
+        { id: 'notion1', type: 'compliance-cert', title: 'Notion Security & Compliance', verified: true, date: '2025-07' }
+      ]
     },
     sources: {
       public: { count: 28, types: [{ type: 'Vendor Documentation', count: 15 }, { type: 'User Reviews', count: 13 }] },
@@ -725,13 +782,14 @@ const mockAssessments: Assessment[] = [
     },
     platformSupport: {
       platforms: [
-        { name: 'macOS', supported: true },
-        { name: 'Windows', supported: true },
-        { name: 'Linux', supported: true },
+        { name: 'macOS', supported: true, versions: '10.15+ (Catalina)', securityModel: 'Hardened runtime with notarization' },
+        { name: 'Windows', supported: true, versions: '10+ / Windows 11', securityModel: 'Code signed with certificate pinning' },
+        { name: 'Linux', supported: true, versions: 'Ubuntu 18.04+, RHEL 7+, Debian 10+', securityModel: 'AppImage/DEB/RPM packages' },
         { name: 'iOS', supported: false },
         { name: 'Android', supported: false },
-        { name: 'Web', supported: true }
-      ]
+        { name: 'Web', supported: true, securityModel: 'vscode.dev - browser-based editor' }
+      ],
+      versionDifferences: 'All desktop platforms have feature parity. Web version (vscode.dev) has limited extension support.'
     },
     dataHandling: {
       storage: {
@@ -782,17 +840,35 @@ const mockAssessments: Assessment[] = [
       cisaKEV: false
     },
     releaseLifecycle: {
-      latestVersion: '1.94.2',
-      releaseFrequency: 'Monthly',
-      patchCadence: 'Immediate for critical',
+      latestVersion: '1.99.0',
+      releaseFrequency: 'Monthly major releases, weekly minor updates',
+      patchCadence: 'Immediate for critical security issues, typically within 24-48 hours',
       eolDates: [],
       ltsVersions: [],
-      versionHistory: []
+      versionHistory: [
+        { version: '1.99.0', releaseDate: '2025-11-05', securityFixes: 1 },
+        { version: '1.98.2', releaseDate: '2025-10-29', securityFixes: 0 },
+        { version: '1.98.0', releaseDate: '2025-10-22', securityFixes: 2 }
+      ]
     },
     aiFeatures: {
       hasAI: true,
       features: [
-        { name: 'GitHub Copilot Integration', description: 'AI code completion (extension)', dataAccess: ['code context'] }
+        { 
+          name: 'GitHub Copilot Integration', 
+          description: 'AI code completion and chat via official extension (requires Copilot subscription)',
+          dataAccess: ['code context', 'open files', 'editor state']
+        },
+        {
+          name: 'IntelliCode',
+          description: 'AI-powered IntelliSense with context-aware suggestions',
+          dataAccess: ['code patterns', 'project structure', 'usage statistics']
+        },
+        {
+          name: 'Code Actions',
+          description: 'AI-suggested refactorings and code improvements',
+          dataAccess: ['code analysis', 'refactoring patterns', 'best practices']
+        }
       ],
       dataUsedForTraining: false,
       canOptOut: true,
@@ -850,13 +926,14 @@ const mockAssessments: Assessment[] = [
     },
     platformSupport: {
       platforms: [
-        { name: 'macOS', supported: true },
-        { name: 'Windows', supported: true },
-        { name: 'Linux', supported: true },
-        { name: 'iOS', supported: true },
-        { name: 'Android', supported: true },
-        { name: 'Web', supported: true }
-      ]
+        { name: 'macOS', supported: true, versions: '10.15+ (Catalina)', securityModel: 'Hardened runtime with notarization' },
+        { name: 'Windows', supported: true, versions: '10+ / Windows 11', securityModel: 'Code signed with certificate pinning' },
+        { name: 'Linux', supported: true, versions: 'Ubuntu 18.04+, Fedora 28+, Debian 10+', securityModel: 'AppImage/DEB/RPM packages' },
+        { name: 'iOS', supported: true, versions: '14.0+', securityModel: 'App Sandbox with strict permissions' },
+        { name: 'Android', supported: true, versions: '7.0+ (API 24+)', securityModel: 'Android permissions with runtime checks' },
+        { name: 'Web', supported: true, securityModel: 'Browser-based with secure file handling' }
+      ],
+      versionDifferences: 'Desktop apps support selective sync and smart sync. Mobile apps have offline access and camera upload features.'
     },
     dataHandling: {
       storage: {
@@ -908,32 +985,50 @@ const mockAssessments: Assessment[] = [
       cisaKEV: false
     },
     releaseLifecycle: {
-      latestVersion: 'Various by platform',
-      releaseFrequency: 'Regular updates',
-      patchCadence: 'Rapid',
+      latestVersion: '202.4.6251 (Desktop), 202.4.6251 (Mobile)',
+      releaseFrequency: 'Bi-weekly updates for desktop, monthly for mobile',
+      patchCadence: 'Critical security patches within 24-48 hours, regular updates bi-weekly',
       eolDates: [],
       ltsVersions: [],
-      versionHistory: []
+      versionHistory: [
+        { version: '202.4.6251', releaseDate: '2025-11-06', securityFixes: 1 },
+        { version: '202.3.6200', releaseDate: '2025-10-23', securityFixes: 0 },
+        { version: '202.3.6150', releaseDate: '2025-10-09', securityFixes: 2 }
+      ]
     },
     aiFeatures: {
       hasAI: true,
       features: [
-        { name: 'Dropbox Dash', description: 'AI-powered universal search', dataAccess: ['file metadata', 'content'] }
+        { 
+          name: 'Dropbox Dash', 
+          description: 'AI-powered universal search across all connected tools and files',
+          dataAccess: ['file metadata', 'content', 'search history', 'connected accounts']
+        },
+        {
+          name: 'Dropbox AI',
+          description: 'AI-powered file summarization, Q&A, and content extraction',
+          dataAccess: ['file content', 'document text', 'media transcripts']
+        },
+        {
+          name: 'Smart Sync Intelligence',
+          description: 'AI-optimized file syncing and storage recommendations',
+          dataAccess: ['file access patterns', 'usage statistics', 'storage metrics']
+        }
       ],
       dataUsedForTraining: false,
       canOptOut: true,
       processingLocation: 'cloud'
     },
     incidents: {
-      count: 2,
+      count: 1,
       timeline: [
         {
-          date: '2012-07-01',
-          title: 'Password Breach',
+          date: '2016-08-31',
+          title: 'Password Breach Disclosure',
           severity: 'High',
-          description: 'Over 68 million user credentials stolen',
-          impact: 'Passwords exposed',
-          resolution: 'Forced password resets, improved security',
+          description: 'Over 68 million user credentials from 2012 breach discovered and disclosed',
+          impact: 'Passwords from 2012 exposed - breach occurred in 2012 but discovered in 2016',
+          resolution: 'Forced password resets, improved security measures',
           sources: []
         }
       ]
@@ -959,7 +1054,7 @@ const mockAssessments: Assessment[] = [
     cached: false,
     product: {
       name: 'Figma',
-      vendor: 'Figma Inc. (Adobe)',
+      vendor: 'Figma Inc.',
       category: 'Design Tools',
       description: 'Collaborative design tool for UI/UX design, prototyping, and design systems.',
       usage: 'Interface design, prototyping, design collaboration, design systems',
@@ -972,13 +1067,13 @@ const mockAssessments: Assessment[] = [
       confidence: 80
     },
     vendorInfo: {
-      companyName: 'Figma Inc. (Adobe Inc.)',
+      companyName: 'Figma Inc.',
       headquarters: 'San Francisco, CA, USA',
       jurisdiction: 'United States',
       founded: 2012,
       reputation: {
         score: 80,
-        summary: 'Leading design platform acquired by Adobe in 2023, strong innovation and user satisfaction.',
+        summary: 'Leading independent design platform with strong innovation and user satisfaction. Adobe acquisition attempt was abandoned in December 2023.',
         sources: []
       },
       securityTrackRecord: 'Good. No major security incidents.',
@@ -986,13 +1081,14 @@ const mockAssessments: Assessment[] = [
     },
     platformSupport: {
       platforms: [
-        { name: 'macOS', supported: true },
-        { name: 'Windows', supported: true },
+        { name: 'macOS', supported: true, versions: '11.0+ (Big Sur)', securityModel: 'Native app with sandboxing' },
+        { name: 'Windows', supported: true, versions: '10+ / Windows 11', securityModel: 'Native app with code signing' },
         { name: 'Linux', supported: false },
-        { name: 'iOS', supported: true },
-        { name: 'Android', supported: true },
-        { name: 'Web', supported: true }
-      ]
+        { name: 'iOS', supported: true, versions: '15.0+', securityModel: 'App Sandbox (Figma Mirror)' },
+        { name: 'Android', supported: true, versions: '8.0+', securityModel: 'Android permissions (Figma Mirror)' },
+        { name: 'Web', supported: true, securityModel: 'Browser-based (primary platform with WebAssembly)' }
+      ],
+      versionDifferences: 'Web platform is primary with full feature set. Desktop apps provide better performance and offline capabilities. Mobile apps (Figma Mirror) are for viewing and commenting only.'
     },
     dataHandling: {
       storage: {
@@ -1051,21 +1147,40 @@ const mockAssessments: Assessment[] = [
       versionHistory: []
     },
     aiFeatures: {
-      hasAI: false,
-      features: [],
+      hasAI: true,
+      features: [
+        {
+          name: 'Figma AI',
+          description: 'AI-powered design generation, layout suggestions, and content creation',
+          dataAccess: ['design files', 'component libraries', 'design patterns', 'workspace context']
+        },
+        {
+          name: 'AI Text Generation',
+          description: 'Intelligent text generation and placeholder content',
+          dataAccess: ['text layers', 'design context', 'component properties']
+        },
+        {
+          name: 'Smart Layout',
+          description: 'AI-assisted layout suggestions and auto-layout optimization',
+          dataAccess: ['layout structures', 'component relationships', 'design hierarchy']
+        }
+      ],
       dataUsedForTraining: false,
       canOptOut: true,
-      processingLocation: 'local'
+      processingLocation: 'cloud'
     },
     incidents: {
       count: 0,
       timeline: []
     },
     compliance: {
-      certifications: ['SOC 2 Type II', 'GDPR Compliant'],
-      dataHandlingSummary: 'Strong data protection with enterprise features',
+      certifications: ['SOC 2 Type II', 'ISO 27001', 'GDPR Compliant', 'CCPA Compliant'],
+      dataHandlingSummary: 'Enterprise-grade data protection with encryption at rest and in transit. GDPR-compliant with data residency options.',
       dpa: true,
-      sources: []
+      sources: [
+        { id: 'figma1', type: 'compliance-cert', title: 'Figma Security & Compliance', verified: true, date: '2025-08' },
+        { id: 'figma2', type: 'vendor-stated', title: 'Figma Trust Center', verified: true }
+      ]
     },
     sources: {
       public: { count: 38, types: [{ type: 'Vendor Documentation', count: 25 }, { type: 'User Community', count: 13 }] },
